@@ -1,30 +1,28 @@
-async function getUsers() {
-  let url = "./MOCK_DATA.json";
+async function getUsers () {
+  const url = './MOCK_DATA.json';
   try {
-    let res = await fetch(url);
+    const res = await fetch(url);
     return await res.json();
-  } catch (error) {
+  } catch ( error ) {
     console.log(error);
   }
 }
 
-async function renderUsers() {
-  let users = await getUsers();
-  let html = "";
+async function renderUsers () {
+  const users = await getUsers();
+  let html = '';
   users.forEach((user) => {
-    let htmlSegment = `
-          <div class='user'>
-            <img src='${user.avatar}' alt='${user.first_name}' />
-            <div class='email'><a href='email:${user.email}'>${user.email}</div>
+    const htmlSegment = `
+          <div class="user">
+            <img src="${user.avatar}" alt="${user.first_name}" />
+            <div class="email"><a href="email:${user.email}">${user.email}</div>
           </div>
 `;
-    html+=htmlSegment;
+    html += htmlSegment;
   });
 
-  let data=document.querySelector(".data");
-  data.innerHTML=html;
+  const data = document.querySelector('.data');
+  data.innerHTML = html;
 }
 
-renderUsers()
-
-
+renderUsers();
