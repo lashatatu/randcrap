@@ -1,9 +1,15 @@
-const productsModel=require('./products.model')
+const productsModel = require('./products.model');
 
 module.exports = {
   Query: {
-    products: (parent) => {
-      return productsModel.getAllProducts()
+    products: () => {
+      return productsModel.getAllProducts();
+    },
+    productsByPrice: (_, args) => {
+      return productsModel.getProductsByPrice(args.min, args.max);
+    },
+    product: (_, args) => {
+      return productsModel.getProductsById(args.id);
     },
   },
 };

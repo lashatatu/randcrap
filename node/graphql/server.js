@@ -11,7 +11,6 @@ const resolversArray = loadFilesSync(path.join(__dirname, '**/*.resolvers.js'));
 const schema = makeExecutableSchema({
   typeDefs: typesArray,
   resolvers: resolversArray,
-
 });
 
 const app = express();
