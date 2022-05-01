@@ -1,26 +1,28 @@
-const btn = document.querySelector('#btn');
-const name = document.querySelector('.name');
-const textInput = document.querySelector('#textInput');
+// document.querySelector('.card-title')
+//   .addEventListener('click', function () {
+//     console.log('card-title');
+//   });
+//
+// document.querySelector('.card-content')
+//   .addEventListener('click', function () {
+//     console.log('card-content');
+//   });
+//
+// document.querySelector('.card')
+//   .addEventListener('click', function () {
+//     console.log('card');
+//   });
+//
+// document.querySelector('.col')
+//   .addEventListener('click', function () {
+//     console.log('col');
+//   });
 
-textInput.addEventListener('keydown',runEvent);
+document.body.addEventListener('click', deleteItem);
 
-function runEvent (e) {
-  if ( e.keyCode === 13 ) {
-    name.innerHTML = textInput.value;
-    textInput.value = '';
+function deleteItem (e) {
+  if ( e.target.parentElement.classList.contains('delete-item') ) {
+    console.log('delete item');
+    e.target.parentElement.parentElement.remove();
   }
-
-  if ( e.keyCode === 27 ) {
-    textInput.value = '';
-  }
-
-  name.innerText = e.target.value;
-};
-
-console.log(btn);
-btn.addEventListener('click', () => {
-  // switch body style
-  btn.style.backgroundColor = btn.style.backgroundColor === 'white' ? '#CCCCCC' : 'white';
-  btn.style.textDecoration = btn.style.textDecoration === 'none' ? 'underline' : 'none';
-
-});
+}
