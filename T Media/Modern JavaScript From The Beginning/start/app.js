@@ -1,17 +1,25 @@
-console.log(' World');
-console.log(123);
-console.log(true);
-console.log([1, 2, 3]);
+document.querySelector('form').addEventListener('submit', function (e) {
+  const task = document.getElementById('task').value;
 
-function hello (name, surname) {
-  console.log(`Hello ${name} ${surname}`);
-}
+  let tasks;
 
-hello('lasha', 'tatulashvili');
+  if ( localStorage.getItem('tasks') === null ) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'))
+  }
 
-function lasha (work) {
-  hello('lasha', 'tatulashvili');
-  console.log(`I am a ${work}`);
-}
+  tasks.push(task)
 
-lasha('developer');
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  alert('task saved');
+
+  e.preventDefault();
+});
+
+
+const tasks=JSON.parse(localStorage.getItem('tasks'))
+
+tasks.forEach((task)=>{
+  console.log(task);
+})
