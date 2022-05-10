@@ -1,0 +1,8 @@
+{
+  "name": "GithubUsersProject",
+  "version": "1.0.0",
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
