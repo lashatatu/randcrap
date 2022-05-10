@@ -45,7 +45,7 @@ function getExternal () {
     data.forEach(function (user) {
       output += `
         <li>${user.login}</li>
-        <img src={user.avatar_url}></img>
+        <img src={user.id} alt={user.id}></img>
 `;
     });
     document.getElementById('output').innerHTML = output;
