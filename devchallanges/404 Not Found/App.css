@@ -1,0 +1,102 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.main__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+@media only screen and (max-width: 962px) {
+  .main__content {
+    flex-direction: column;
+  }
+}
+
+nav {
+  margin-top: 40px;
+  margin-left: 70px;
+  height: 25px;
+  font-family: "Inconsolata", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 25px;
+  color: #333333;
+}
+
+.left404side img {
+  width: 100%;
+  max-width: 539px;
+  height: auto;
+  object-fit: cover;
+}
+
+.right404side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 30px;
+}
+.right404side h1 {
+  font-family: "Space Mono", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 95px;
+  letter-spacing: -0.035em;
+}
+.right404side p {
+  width: 381px;
+  height: 180px;
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: -0.035em;
+}
+.right404side button {
+  font-family: "Space Mono", monospace;
+  text-transform: uppercase;
+  height: 68px;
+  width: 216px;
+  background: #333333;
+  color: #ffffff;
+  border-radius: 8px;
+}
+.right404side button:hover {
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #BDBDBD;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  text-align: center;
+}
+footer a {
+  color: #BDBDBD;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=App.css.map */
