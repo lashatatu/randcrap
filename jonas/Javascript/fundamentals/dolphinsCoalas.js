@@ -2,7 +2,7 @@ const dolphinsScore1 = 96;
 const dolphinsScore2 = 108;
 const dolphinsScore3 = 89;
 const dolphinsScoreSum = (dolphinsScore1 + dolphinsScore2 + dolphinsScore3)/3;
-
+//rebase
 const koalasScore1 = 88;
 const koalasScore2 = 105;
 const koalasScore3 = 110;
