@@ -8,10 +8,12 @@ function calculateBmi (height, mass) {
   return BMI;
 }
 
-const markHigherBIM = calculateBmi(markHeight, markMass) > calculateBmi(johnHeight, johnMass);
+const markBMI = calculateBmi(markHeight, markMass);
+const johnBMI = calculateBmi(johnHeight, johnMass);
+const markHigherBIM = markBMI > johnBMI;
 
 if ( markHigherBIM ) {
-  console.log(`Mark's BMI ${Math.floor(calculateBmi(markHeight, markMass)*10)/10} is Higher than Johns`);
+  console.log(`Mark's BMI ${Math.floor(markBMI * 10) / 10} is Higher than John's`);
 } else {
   console.log('John is fatter');
 }
