@@ -23,3 +23,10 @@
 // console.log(fruitProcessor(2,3))
 //
 // console.log(fruitProcessor(2,4));
+
+function calcAge1 (birthYear) {
+  return 2037 - birthYear;
+}
+
+console.log(calcAge1(2000))
+
