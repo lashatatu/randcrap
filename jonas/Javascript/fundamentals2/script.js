@@ -1,32 +1,13 @@
 'use strict';
 
-// let hasDriversLicense = false;
-// const passTest = true;
-//
-// if(passTest) hasDriversLicense=true;
-// if(hasDriversLicense) {
-//   console.log('i can drive')
-// }
+const ageCalc = birthYear => 2017 - birthYear;
+console.log(ageCalc(1991));
 
-// function logger () {
-//   console.log('my name is Lasha');
-// }
-//
-// logger();
-//
-// function fruitProcessor (apples, oranges) {
-//   console.log(apples, oranges);
-//
-//   return `juice with ${apples} apples and ${oranges} oranges`
-// }
-//
-// console.log(fruitProcessor(2,3))
-//
-// console.log(fruitProcessor(2,4));
+const yearsUntilRetirement = (birthYear) => {
+  const age = 2037 - birthYear;
+  const retirement = 65 - age;
+  return `${retirement}`;
+};
 
-function calcAge1 (birthYear) {
-  return 2037 - birthYear;
-}
-
-console.log(calcAge1(2000))
+console.log(yearsUntilRetirement(1991))
 
