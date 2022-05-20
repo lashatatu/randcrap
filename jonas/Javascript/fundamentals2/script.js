@@ -18,5 +18,5 @@
 // };
 //
 // checkWinner(avgDolphins, avgKoalas);
-console.log('testasdasdasd');
+console.log('asd');
 
