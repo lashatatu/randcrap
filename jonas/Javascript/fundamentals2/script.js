@@ -1,14 +1,20 @@
 'use strict';
 
-function cutFruitPieces (fruit) {
-  return fruit * 4;
-}
+const calcAverage = (score1, score2, score3) => {
+  return (score1 + score2 + score3) / 3;
+};
 
-function fruitProcessor (apples, oranges) {
-  const applePieces = cutFruitPieces(apples);
-  const orangesPieces = cutFruitPieces(oranges);
-  const juice = `Juice with ${applePieces} apples and ${orangesPieces} oranges`;
-  return juice;
-}
+const avgDolphins = calcAverage(44, 23, 71);
+const avgKoalas = calcAverage(65, 54, 49);
 
-console.log(fruitProcessor(2,3));
+const checkWinner = (team1, team2) => {
+  if ( team1 >= team2 * 2 ) {
+    console.log(`Dolphins win "(${avgDolphins} vs. ${avgKoalas})"`);
+  } else if ( team1 * 2 <= team2 ) {
+    console.log(`Koalas win "(${avgKoalas} vs ${avgDolphins})"`);
+  } else {
+    console.log('no team wins');
+  }
+};
+
+checkWinner(avgDolphins, avgKoalas);
