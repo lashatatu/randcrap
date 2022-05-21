@@ -18,20 +18,20 @@
 // };
 //
 // checkWinner(avgDolphins, avgKoalas);
-console.log('asd');
-
-const lasha = {
-  friends: ['qeti', 'eka', 'salo'],
-  yearOfBirth: 1988,
-  name: 'lasha',
-  surname: 'talashvili',
-  hasDriversLicense: false,
-  getSummery: function () {
-
-    return `${this.name} is a ${2022 -
-    this.yearOfBirth}-year old programmer, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license`;
-  },
-};
-
-console.log(lasha.getSummery());
+// console.log('asd');
+//
+// const lasha = {
+//   friends: ['qeti', 'eka', 'salo'],
+//   yearOfBirth: 1988,
+//   name: 'lasha',
+//   surname: 'talashvili',
+//   hasDriversLicense: false,
+//   getSummery: function () {
+//
+//     return `${this.name} is a ${2022 -
+//     this.yearOfBirth}-year old programmer, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license`;
+//   },
+// };
+//
+// console.log(lasha.getSummery());
 
