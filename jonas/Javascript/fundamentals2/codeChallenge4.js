@@ -15,17 +15,20 @@ for ( let i = 0; i < bills.length; i++ ) {
   console.log(`Tip: ${tips[i]}, Total Bill: ${totals[i]}`);
 }
 
+console.log(bills, tips, totals);
 console.log('-------------------------------------');
-const calcAverage = (bills) => {
+const calcAverage = (arr) => {
   let sum = 0;
 
-  for ( let i = 0; i < bills.length; i++ ) {
-    sum = sum + bills[i];
+  for ( let i = 0; i < arr.length; i++ ) {
+    sum = sum + arr[i];
   }
-  console.log(sum / bills.length);
-
+  console.log(sum / arr.length);
+  return sum / arr.length;
 };
+
 calcAverage(bills);
+calcAverage(tips);
 calcAverage(totals);
 
 
