@@ -22,10 +22,16 @@ console.log('asd');
 
 const lasha = {
   friends: ['qeti', 'eka', 'salo'],
-  age: 32,
+  yearOfBirth: 1988,
   name: 'lasha',
   surname: 'talashvili',
+  hasDriversLicense: false,
+  getSummery: function () {
+
+    return `${this.name} is a ${2022 -
+    this.yearOfBirth}-year old programmer, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license`;
+  },
 };
 
-console.log(`lasha has ${lasha.friends.length} friends and his best friend is called ${lasha.friends[0]}`);
+console.log(lasha.getSummery());
 
