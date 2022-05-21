@@ -20,3 +20,12 @@
 // checkWinner(avgDolphins, avgKoalas);
 console.log('asd');
 
+const lasha = {
+  friends: ['qeti', 'eka', 'salo'],
+  age: 32,
+  name: 'lasha',
+  surname: 'talashvili',
+};
+
+console.log(`lasha has ${lasha.friends.length} friends and his best friend is called ${lasha.friends[0]}`);
+
