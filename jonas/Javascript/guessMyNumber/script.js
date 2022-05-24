@@ -1,7 +1,7 @@
 'use strict';
 
-const test=document.querySelector('.message').textContent;
+document.querySelector('.message').textContent;
+document.querySelector('.guess').value = 23;
 
-// text
 
 
