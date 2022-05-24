@@ -14,6 +14,9 @@ document.querySelector('.check')
       document.querySelector('.message').textContent = 'No Number 😭';
     } else if ( guess === secretNumber ) {
       document.querySelector('.message').textContent = 'Correct Number ✔';
+      document.querySelector('body').style.backgroundColor='#60b347'
+      document.querySelector('.number').style.width='30rem'
+
     } else if ( guess > secretNumber ) {
       if ( score > 1 ) {
         document.querySelector('.message').textContent = 'Number is too High';
@@ -22,6 +25,8 @@ document.querySelector('.check')
       } else {
         document.querySelector('.message').textContent = 'You lost';
         document.querySelector('.score').textContent = 0;
+        document.querySelector('body').style.backgroundColor='#BB1515DC'
+        document.querySelector('.number').style.width='30rem'
       }
     } else if ( guess <= secretNumber ) {
       if ( score > 1 ) {
@@ -31,6 +36,8 @@ document.querySelector('.check')
       } else {
         document.querySelector('.message').textContent = 'You lost';
         document.querySelector('.score').textContent = 0;
+        document.querySelector('body').style.backgroundColor='#BB1515DC'
+        document.querySelector('.number').style.width='30rem'
       }
     }
 
