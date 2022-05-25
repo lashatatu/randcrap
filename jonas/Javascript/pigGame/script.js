@@ -59,3 +59,22 @@ btnHold.addEventListener('click', () => {
   }
 });
 
+btnNew.addEventListener('click', () => {
+  diceEl.classList.add('hidden');
+  activePlayer = 0;
+  playing = true;
+  if ( !player0El.classList.contains('player--active') || player0El.classList.contains('player--winner') ) {
+    player0El.classList.remove('player--winner');
+    player0El.classList.toggle('player--active');
+  }
+  if ( player1El.classList.contains('player--active') || player0El.classList.contains('player--winner') ) {
+    player1El.classList.remove('player--winner');
+    player1El.classList.toggle('player--active');
+  }
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+
+  document.querySelector(`#current--${activePlayer}`).textContent = 0;
+
+});
+
