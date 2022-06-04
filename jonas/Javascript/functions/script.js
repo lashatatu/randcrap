@@ -1,17 +1,30 @@
 'use strict';
 
-const bookings = [];
+// const bookings = [];
+//
+// const createBooking = function (flightNum, numPassengers, price) {
+//
+//   const booking = {
+//     flightNum,
+//     numPassengers,
+//     price,
+//   };
+//
+//   console.log(booking);
+//   bookings.push(booking);
+// };
+//
+// createBooking('lh123');
 
-const createBooking = function (flightNum, numPassengers, price) {
+const greet=(greeting)=>{
+  return (name)=>{
+    console.log(`${greeting} ${name}`);
+  }
+}
 
-  const booking = {
-    flightNum,
-    numPassengers,
-    price,
-  };
+const greeterHey=greet('hey')
 
-  console.log(booking);
-  bookings.push(booking);
-};
+greeterHey('lasha')
+greeterHey('nana')
 
-createBooking('lh123');
+greet('hello')('lasha')
