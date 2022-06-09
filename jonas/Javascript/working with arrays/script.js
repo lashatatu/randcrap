@@ -78,21 +78,28 @@ const displayMovements = (movements) => {
 
 displayMovements(account1.movements);
 
+const calcDisplayBalance = (movements) => {
+  const balance = movements.reduce((acc, mov) => {
+    return acc + mov;
+  }, 0);
+  labelBalance.textContent = `${balance} EUR💶`;
+};
+
+calcDisplayBalance(account1.movements);
+
 const createUsernames = (accs) => {
-  accs.forEach((acc)=>{
-    acc.username=acc.owner
+  accs.forEach((acc) => {
+    acc.username = acc.owner
       .toLowerCase()
       .split(' ')
       .map((name) => {
         return name.at(0);
       })
       .join('');
-  })
+  });
 };
 
 createUsernames(accounts);
-
-
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -106,15 +113,12 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-const deposits=movements.filter((mov)=>{
-  return mov>0
-})
-const withdrawals=movements.filter((mov)=>{
-  return mov<0
-})
+const max = movements.reduce((acc, mov) => {
+  return acc > mov ? acc : mov;
+}, movements[0]);
 
-console.log(deposits);
-console.log(withdrawals);
+console.log(max);
+
 
 
 
