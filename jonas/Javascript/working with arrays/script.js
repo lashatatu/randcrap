@@ -69,7 +69,7 @@ const displayMovements = (movements) => {
     const html = `
         <div class="movements__row">
           <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
-          <div class="movements__value">${mov}</div>
+          <div class="movements__value">${mov}  💶</div>
         </div>
     `;
     containerMovements.insertAdjacentHTML('afterbegin', html);
@@ -86,6 +86,26 @@ const calcDisplayBalance = (movements) => {
 };
 
 calcDisplayBalance(account1.movements);
+
+const calcDisplaySummary = (movements) => {
+  const incomes = movements.filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${incomes}  💶`;
+  const out = movements.filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `${out} 💶`;
+  const interest = movements.filter(mov => mov > 0)
+    .map((mov) => {
+      return mov * 1.2 / 100;
+    })
+    .filter((int, i, arr) => {
+      return int >= 1;
+    })
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumInterest.textContent = `${interest}💶`;
+};
+
+calcDisplaySummary(account1.movements);
 
 const createUsernames = (accs) => {
   accs.forEach((acc) => {
@@ -112,13 +132,10 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
-
-const max = movements.reduce((acc, mov) => {
-  return acc > mov ? acc : mov;
-}, movements[0]);
-
-console.log(max);
-
-
+const eurToUsd = 1.1;
+const totalDepositsUsd = movements.filter(mov => mov > 0)
+  .map(mov => mov * eurToUsd)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(totalDepositsUsd);
 
 
