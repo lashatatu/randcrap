@@ -62,7 +62,7 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 const displayMovements = (movements) => {
-  containerMovements.innerHTML=``
+  containerMovements.innerHTML = ``;
 
   movements.forEach((mov, i) => {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
@@ -78,6 +78,22 @@ const displayMovements = (movements) => {
 
 displayMovements(account1.movements);
 
+const createUsernames = (accs) => {
+  accs.forEach((acc)=>{
+    acc.username=acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map((name) => {
+        return name.at(0);
+      })
+      .join('');
+  })
+};
+
+createUsernames(accounts);
+
+
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -89,5 +105,6 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
 
 
