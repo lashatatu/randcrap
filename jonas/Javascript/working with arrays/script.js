@@ -76,8 +76,6 @@ const displayMovements = (movements) => {
   });
 };
 
-displayMovements(account1.movements);
-
 const calcDisplayBalance = (movements) => {
   const balance = movements.reduce((acc, mov) => {
     return acc + mov;
@@ -85,18 +83,18 @@ const calcDisplayBalance = (movements) => {
   labelBalance.textContent = `${balance} EUR💶`;
 };
 
-calcDisplayBalance(account1.movements);
-
-const calcDisplaySummary = (movements) => {
-  const incomes = movements.filter(mov => mov > 0)
+const calcDisplaySummary = (acc) => {
+  const incomes = acc.movements.filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumIn.textContent = `${incomes}  💶`;
-  const out = movements.filter(mov => mov < 0)
+
+  const out = acc.movements.filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumOut.textContent = `${out} 💶`;
-  const interest = movements.filter(mov => mov > 0)
+
+  const interest = acc.movements.filter(mov => mov > 0)
     .map((mov) => {
-      return mov * 1.2 / 100;
+      return mov * acc.interestRate / 100;
     })
     .filter((int, i, arr) => {
       return int >= 1;
@@ -104,8 +102,6 @@ const calcDisplaySummary = (movements) => {
     .reduce((acc, mov) => acc + mov, 0);
   labelSumInterest.textContent = `${interest}💶`;
 };
-
-calcDisplaySummary(account1.movements);
 
 const createUsernames = (accs) => {
   accs.forEach((acc) => {
@@ -121,6 +117,28 @@ const createUsernames = (accs) => {
 
 createUsernames(accounts);
 
+let currentAccount;
+
+btnLogin.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log('login');
+  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+  console.log(currentAccount);
+  if ( currentAccount?.pin === Number(inputLoginPin.value) ) {
+    labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`;
+
+    containerApp.style.opacity = 100;
+
+    inputLoginUsername.value = '';
+    inputLoginUsername.value = '';
+    inputLoginPin.blur();
+    displayMovements(currentAccount.movements);
+    calcDisplayBalance(currentAccount.movements);
+    calcDisplaySummary(currentAccount);
+
+  }
+});
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -132,12 +150,6 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
-const eurToUsd = 1.1;
-const totalDepositsUsd = movements.filter(mov => mov > 0)
-  .map(mov => mov * eurToUsd)
-  .reduce((acc, mov) => acc + mov, 0);
 
-const account = accounts.find(acc => acc.owner === 'Jessica Davis');
-console.log(account);
 
 
