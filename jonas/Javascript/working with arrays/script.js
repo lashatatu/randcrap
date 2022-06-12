@@ -149,6 +149,19 @@ btnTransfer.addEventListener('click', (e) => {
   }
 });
 
+btnLoan.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value);
+
+  if ( amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1) ) {
+    currentAccount.movements.push(amount);
+
+    updateUI(currentAccount);
+  }
+  inputLoanAmount.value = '';
+});
+
 btnClose.addEventListener('click', (e) => {
   e.preventDefault();
   if ( inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin ) {
@@ -172,5 +185,11 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
+console.log(movements);
 
+const anyDeposits = movements.some(mov => mov > 0);
+console.log(anyDeposits);
 
+console.log(account4.movements.every(mov => mov > 0));
+
+const deposit = mov => mov > 0;
