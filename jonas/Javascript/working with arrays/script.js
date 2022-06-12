@@ -195,3 +195,56 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
+const z = Array.from({length: 100}, (_, i) => Math.floor(Math.random() * 10 + 1));
+
+labelBalance.addEventListener('click', () => {
+  const movementsUI = Array.from(document.querySelectorAll('.movements__value'));
+  console.log(movementsUI.map(el => el.textContent.reduce('💶', '')));
+});
+// 1.
+const bankDepositSum = accounts.flatMap((acc) => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((acc, cur) => acc + cur, 0);
+console.log(bankDepositSum);
+
+// 2.
+
+const numDeposits1000 = accounts.flatMap((acc) => acc.movements)
+  .filter(mov => mov > 1000)
+  .reduce((_, _1, _2, arr) => arr.length);
+
+console.log(numDeposits1000);
+
+// 3.
+
+const {
+  deposits,
+  withdrawals,
+} = accounts.flatMap((acc) => acc.movements)
+  .reduce((sums, cur) => {
+      cur > 0 ? sums.deposits += cur : sums.withdrawals += cur;
+
+      return sums;
+    },
+    {
+      deposits: 0,
+      withdrawals: 0,
+    });
+console.log(deposits, withdrawals);
+
+// 4.
+// this is a nice title
+const convertTitleCase = (title) => {
+
+
+  const exceptations = ['a', 'an', 'the', 'but', 'or', 'on', 'in', 'with','and'];
+
+  const titleCase = title.toLowerCase()
+    .split(' ')
+    .map(word => exceptations.includes(word) ? word : word[0].toUpperCase() + word.slice(1)).join(' ');
+  return titleCase;
+};
+
+console.log(convertTitleCase('this is a nice title'));
+console.log(convertTitleCase('this is a Long title but too long'));
+console.log(convertTitleCase('this is a title with an Example'));
