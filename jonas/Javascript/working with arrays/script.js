@@ -141,12 +141,23 @@ btnTransfer.addEventListener('click', (e) => {
 
   const amount = Number(inputTransferAmount.value);
   const receiverAcc = accounts.find(acc => acc.username === inputTransferTo.value);
-  inputTransferAmount.value =inputTransferTo.value= '';
+  inputTransferAmount.value = inputTransferTo.value = '';
   if ( amount > 0 && currentAccount.balance >= amount && receiverAcc?.username !== currentAccount.username ) {
     currentAccount.movements.push(-amount);
     receiverAcc.movements.push(amount);
     updateUI(currentAccount);
   }
+});
+
+btnClose.addEventListener('click', (e) => {
+  e.preventDefault();
+  if ( inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin ) {
+    const index = accounts.findIndex(acc => acc.username === currentAccount.username);
+    accounts.splice(index, 1);
+    containerApp.style.opacity = 0;
+  }
+  inputCloseUsername.value = inputClosePin.value = '';
+
 });
 
 /////////////////////////////////////////////////
