@@ -86,7 +86,7 @@ const formatMovementDate = (date) => {
     return Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
   };
   const daysPassed = calcDaysPassed(new Date(), date);
-  console.log(daysPassed);
+  // console.log(daysPassed);
 
   if ( daysPassed === 0 ) {
     return 'Today';
@@ -106,7 +106,7 @@ const formatMovementDate = (date) => {
 
 const displayMovements = (acc, sort = false) => {
   containerMovements.innerHTML = '';
-
+  console.log(acc.movements.slice());
   const movs = sort ? acc.movements.slice()
     .sort((a, b) => a - b) : acc.movements;
 
@@ -191,7 +191,7 @@ btnLogin.addEventListener('click', (e) => {
   e.preventDefault();
 
   currentAccount = accounts.find((acc) => acc.username === inputLoginUsername.value);
-  console.log(currentAccount);
+  // console.log(currentAccount);
 
   if ( currentAccount?.pin === +inputLoginPin.value ) {
     // Display UI and message
@@ -254,7 +254,7 @@ btnClose.addEventListener('click', (e) => {
 
   if ( inputCloseUsername.value === currentAccount.username && +inputClosePin.value === currentAccount.pin ) {
     const index = accounts.findIndex((acc) => acc.username === currentAccount.username);
-    console.log(index);
+    // console.log(index);
     // .indexOf(23)
 
     // Delete account
