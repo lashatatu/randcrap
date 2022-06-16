@@ -21,9 +21,9 @@ const account1 = {
     '2020-01-28T09:15:04.904Z',
     '2020-04-01T10:17:24.185Z',
     '2020-05-08T14:11:59.604Z',
-    '2020-05-27T17:01:17.194Z',
-    '2020-07-11T23:36:17.929Z',
-    '2020-07-12T10:51:36.790Z',
+    '2020-07-26T17:01:17.194Z',
+    '2020-07-28T23:36:17.929Z',
+    '2020-08-01T10:51:36.790Z',
   ],
   currency: 'EUR',
   locale: 'pt-PT', // de-DE
@@ -51,6 +51,7 @@ const account2 = {
 
 const accounts = [account1, account2];
 
+/////////////////////////////////////////////////
 // Elements
 const labelWelcome = document.querySelector('.welcome');
 const labelDate = document.querySelector('.date');
@@ -77,11 +78,16 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+/////////////////////////////////////////////////
+// Functions
+
 const formatMovementDate = (date) => {
   const calcDaysPassed = (date1, date2) => {
     return Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
   };
   const daysPassed = calcDaysPassed(new Date(), date);
+  console.log(daysPassed);
+
   if ( daysPassed === 0 ) {
     return 'Today';
   }
@@ -99,14 +105,17 @@ const formatMovementDate = (date) => {
 };
 
 const displayMovements = (acc, sort = false) => {
-  containerMovements.innerHTML = ``;
+  containerMovements.innerHTML = '';
 
   const movs = sort ? acc.movements.slice()
     .sort((a, b) => a - b) : acc.movements;
 
   movs.forEach((mov, i) => {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
+
     const date = new Date(acc.movementsDates[i]);
+
+
     const displayDate = formatMovementDate(date);
 
     const html = `
@@ -182,6 +191,8 @@ btnLogin.addEventListener('click', (e) => {
   e.preventDefault();
 
   currentAccount = accounts.find((acc) => acc.username === inputLoginUsername.value);
+  console.log(currentAccount);
+
   if ( currentAccount?.pin === +inputLoginPin.value ) {
     // Display UI and message
     labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`;
@@ -196,16 +207,15 @@ btnLogin.addEventListener('click', (e) => {
     const min = `${now.getMinutes()}`.padStart(2, 0);
     labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
 
-    inputLoginUsername.value = '';
-    inputLoginUsername.value = '';
+    inputLoginUsername.value =inputLoginUsername.value= '';
     inputLoginPin.blur();
+
     updateUI(currentAccount);
   }
 });
 
 btnTransfer.addEventListener('click', (e) => {
   e.preventDefault();
-
   const amount = +inputTransferAmount.value;
   const receiverAcc = accounts.find((acc) => acc.username === inputTransferTo.value);
   inputTransferAmount.value = inputTransferTo.value = '';
