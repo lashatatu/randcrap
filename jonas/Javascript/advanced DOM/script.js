@@ -52,9 +52,19 @@ message.innerHTML = `we use cookies
 <button class="btn btn--close-cookie">got it</button>
 `;
 
-header.prepend(message);
+header.append(message);
 document.querySelector('.btn--close-cookie')
   .addEventListener('click', () => {
     return message.remove();
   });
+
+message.style.backgroundColor = '#37383D';
+message.style.width = '107%';
+message.style.height = Number.parseFloat(getComputedStyle(message).height + 10) + 30 + 'px';
+document.documentElement.style.setProperty('--color-primary','orangered')
+
+
+// Attributes
+
+const logo=document.querySelector('.nav__logo')
 
