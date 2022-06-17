@@ -14,12 +14,12 @@ const openModal = function () {
 };
 
 const closeModal = function (e) {
-  e.preventDefault()
+  e.preventDefault();
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
 };
 
-btnsOpenModal.forEach(btn=>btn.addEventListener('click', openModal))
+btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
 
 for ( let i = 0; i < btnsOpenModal.length; i++ ) btnsOpenModal[i].addEventListener('click', openModal);
 
@@ -31,3 +31,30 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+const header = document.querySelector('.header');
+const allSections = document.querySelectorAll('.section');
+console.log(allSections);
+
+document.getElementById('section--1');
+
+const allButtons = document.getElementsByTagName('button');
+console.log(allButtons);
+
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+message.textContent = 'we use cookies';
+message.innerHTML = `we use cookies
+<button class="btn btn--close-cookie">got it</button>
+`;
+
+header.prepend(message);
+document.querySelector('.btn--close-cookie')
+  .addEventListener('click', () => {
+    return message.remove();
+  });
+
