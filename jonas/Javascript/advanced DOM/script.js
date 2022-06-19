@@ -63,6 +63,27 @@ document.querySelector('.nav__links')
 //     });
 //   });
 
+// Tabbed Component
+
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
+
+tabsContainer.addEventListener('click', (e) => {
+  const clicked = e.target.closest('.operations__tab');
+
+  if ( !clicked ) {
+    return;
+  }
+  tabs.forEach(t=>t.classList.remove('operations__tab--active'))
+  tabsContent.forEach(t=>t.classList.remove('operations__content--active'))
+
+  clicked.classList.add('operations__tab--active');
+
+  document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active')
+
+});
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -106,22 +127,22 @@ document.querySelector('.nav__links')
 //   alert('heading')
 // })
 /*
-DOM Traversing
+ DOM Traversing
 
-const h1=document.querySelector('h1')
+ const h1=document.querySelector('h1')
 
-downward
+ downward
 
-console.log(h1.querySelectorAll('.highlight'));
-console.log(h1.childNodes);
-console.log(h1.children);
+ console.log(h1.querySelectorAll('.highlight'));
+ console.log(h1.childNodes);
+ console.log(h1.children);
 
-upward
+ upward
 
-console.log(h1.parentNode);
-console.log(h1.parentElement);
+ console.log(h1.parentNode);
+ console.log(h1.parentElement);
 
-h1.closest('.header').style.background='var(--gradient-secondary)'
+ h1.closest('.header').style.background='var(--gradient-secondary)'
 
-*/
+ */
 
