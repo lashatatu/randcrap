@@ -145,7 +145,6 @@ window.addEventListener('scroll', () => {
 // message.innerHTML = `we use cookies
 // <button class="btn btn--close-cookie">got it</button>
 // `;
-//aaa1
 // header.append(message);
 // document.querySelector('.btn--close-cookie')
 //   .addEventListener('click', () => {
@@ -187,4 +186,6 @@ window.addEventListener('scroll', () => {
  h1.closest('.header').style.background='var(--gradient-secondary)'
 
  */
+
+// Git done?
 
