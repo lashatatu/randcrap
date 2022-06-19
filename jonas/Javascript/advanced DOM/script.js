@@ -145,7 +145,7 @@ window.addEventListener('scroll', () => {
 // message.innerHTML = `we use cookies
 // <button class="btn btn--close-cookie">got it</button>
 // `;
-//aaa1aa
+//aaa1
 // header.append(message);
 // document.querySelector('.btn--close-cookie')
 //   .addEventListener('click', () => {
