@@ -32,39 +32,47 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', (e) => {
+  const s1coords = section1.getBoundingClientRect();
+  section1.scrollIntoView({behavior: 'smooth'});
+});
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
-const header = document.querySelector('.header');
-const allSections = document.querySelectorAll('.section');
-console.log(allSections);
-
-document.getElementById('section--1');
-
-const allButtons = document.getElementsByTagName('button');
-console.log(allButtons);
-
-const message = document.createElement('div');
-message.classList.add('cookie-message');
-message.textContent = 'we use cookies';
-message.innerHTML = `we use cookies
-<button class="btn btn--close-cookie">got it</button>
-`;
-
-header.append(message);
-document.querySelector('.btn--close-cookie')
-  .addEventListener('click', () => {
-    return message.remove();
-  });
-
-message.style.backgroundColor = '#37383D';
-message.style.width = '107%';
-message.style.height = Number.parseFloat(getComputedStyle(message).height + 10) + 30 + 'px';
-document.documentElement.style.setProperty('--color-primary','orangered')
-
-
-// Attributes
-
-const logo=document.querySelector('.nav__logo')
+// const header = document.querySelector('.header');
+// const allSections = document.querySelectorAll('.section');
+// console.log(allSections);
+//
+// document.getElementById('section--1');
+//
+// const allButtons = document.getElementsByTagName('button');
+// console.log(allButtons);
+//
+// const message = document.createElement('div');
+// message.classList.add('cookie-message');
+// message.textContent = 'we use cookies';
+// message.innerHTML = `we use cookies
+// <button class="btn btn--close-cookie">got it</button>
+// `;
+//
+// header.append(message);
+// document.querySelector('.btn--close-cookie')
+//   .addEventListener('click', () => {
+//     return message.remove();
+//   });
+//
+// message.style.backgroundColor = '#37383D';
+// message.style.width = '107%';
+// message.style.height = Number.parseFloat(getComputedStyle(message).height + 10) + 30 + 'px';
+// document.documentElement.style.setProperty('--color-primary','orangered')
+//
+//
+// // Attributes
+//
+// const logo=document.querySelector('.nav__logo')
 
