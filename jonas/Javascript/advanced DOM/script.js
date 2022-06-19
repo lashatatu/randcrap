@@ -36,7 +36,6 @@ const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
 
 btnScrollTo.addEventListener('click', (e) => {
-  const s1coords = section1.getBoundingClientRect();
   section1.scrollIntoView({behavior: 'smooth'});
 });
 
@@ -75,4 +74,11 @@ btnScrollTo.addEventListener('click', (e) => {
 // // Attributes
 //
 // const logo=document.querySelector('.nav__logo')
+
+//Events
+
+// const h1=document.querySelector('h1')
+// h1.addEventListener('mouseenter',(e)=>{
+//   alert('heading')
+// })
 
