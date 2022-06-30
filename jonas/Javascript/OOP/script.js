@@ -36,7 +36,7 @@
 // const ss = new Set(arr);
 //
 // console.log(ss);
-
+//
 class PersonCl {
   constructor (firstName, birthYear) {
     this.firstName = firstName;
@@ -52,22 +52,48 @@ class PersonCl {
   }
 }
 
-const lasha = new PersonCl('lasha', 1988);
-console.log(lasha.age);
+//
+// const lasha = new PersonCl('lasha', 1988);
+// console.log(lasha.age);
+//
+// const account = {
+//   owner: 'jonas',
+//   movements: [200, 530, 120, 300],
+//
+//   get latest () {
+//     return this.movements.slice(-1)
+//       .pop();
+//   },
+//
+//   set latest (mov) {
+//     this.movements.push(mov);
+//   },
+// };
+//
+// console.log(account.latest);
 
-const account = {
-  owner: 'jonas',
-  movements: [200, 530, 120, 300],
-
-  get latest () {
-    return this.movements.slice(-1)
-      .pop();
+const PersonProto = {
+  calcAge () {
+    console.log(2037 - this.birthYear);
   },
-
-  set latest (mov) {
-    this.movements.push(mov);
+  init (firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
   },
 };
 
-console.log(account.latest);
+const steven = Object.create(PersonProto);
 
+console.log(steven);
+
+steven.name = 'steven';
+steven.birthYear = 2002;
+steven.calcAge();
+
+console.log(steven.__proto__);
+
+const sarah = Object.create(PersonProto);
+
+sarah.init('sarah',1979)
+
+console.log(sarah);
