@@ -46,9 +46,28 @@ class PersonCl {
   calcAge () {
     console.log(2037 - this.birthYear);
   }
+
+  get age () {
+    return 2037 - this.birthYear;
+  }
 }
 
 const lasha = new PersonCl('lasha', 1988);
-console.log(lasha);
+console.log(lasha.age);
 
+const account = {
+  owner: 'jonas',
+  movements: [200, 530, 120, 300],
+
+  get latest () {
+    return this.movements.slice(-1)
+      .pop();
+  },
+
+  set latest (mov) {
+    this.movements.push(mov);
+  },
+};
+
+console.log(account.latest);
 
