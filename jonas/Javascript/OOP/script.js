@@ -37,20 +37,20 @@
 //
 // console.log(ss);
 //
-class PersonCl {
-  constructor (firstName, birthYear) {
-    this.firstName = firstName;
-    this.birthYear = birthYear;
-  }
-
-  calcAge () {
-    console.log(2037 - this.birthYear);
-  }
-
-  get age () {
-    return 2037 - this.birthYear;
-  }
-}
+// class PersonCl {
+//   constructor (firstName, birthYear) {
+//     this.firstName = firstName;
+//     this.birthYear = birthYear;
+//   }
+//
+//   calcAge () {
+//     console.log(2037 - this.birthYear);
+//   }
+//
+//   get age () {
+//     return 2037 - this.birthYear;
+//   }
+// }
 
 //
 // const lasha = new PersonCl('lasha', 1988);
@@ -72,28 +72,52 @@ class PersonCl {
 //
 // console.log(account.latest);
 
-const PersonProto = {
-  calcAge () {
-    console.log(2037 - this.birthYear);
-  },
-  init (firstName, birthYear) {
-    this.firstName = firstName;
-    this.birthYear = birthYear;
-  },
+// const PersonProto = {
+//   calcAge () {
+//     console.log(2037 - this.birthYear);
+//   },
+//   init (firstName, birthYear) {
+//     this.firstName = firstName;
+//     this.birthYear = birthYear;
+//   },
+// };
+//
+// const steven = Object.create(PersonProto);
+//
+// console.log(steven);
+//
+// steven.name = 'steven';
+// steven.birthYear = 2002;
+// steven.calcAge();
+//
+// console.log(steven.__proto__);
+//
+// const sarah = Object.create(PersonProto);
+//
+// sarah.init('sarah',1979)
+//
+// console.log(sarah);
+
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
 };
 
-const steven = Object.create(PersonProto);
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
 
-console.log(steven);
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
 
-steven.name = 'steven';
-steven.birthYear = 2002;
-steven.calcAge();
+Student.prototype=Object.create(Person.prototype)
 
-console.log(steven.__proto__);
+Student.prototype.introduce = function () {
+  console.log(`my name is ${this.firstName} and i study ${this.course}`);
+};
 
-const sarah = Object.create(PersonProto);
-
-sarah.init('sarah',1979)
-
-console.log(sarah);
+const mike = new Student('mike', 2020, 'Computer Science');
+mike.introduce();
+mike.calcAge()
