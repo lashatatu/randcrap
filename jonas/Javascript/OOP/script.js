@@ -98,26 +98,82 @@
 //
 // console.log(sarah);
 
-const Person = function (firstName, birthYear) {
-  this.firstName = firstName;
-  this.birthYear = birthYear;
-};
+// const Person = function (firstName, birthYear) {
+//   this.firstName = firstName;
+//   this.birthYear = birthYear;
+// };
+//
+// Person.prototype.calcAge = function () {
+//   console.log(2037 - this.birthYear);
+// };
+//
+// const Student = function (firstName, birthYear, course) {
+//   Person.call(this, firstName, birthYear);
+//   this.course = course;
+// };
+//
+// Student.prototype=Object.create(Person.prototype)
+//
+// Student.prototype.introduce = function () {
+//   console.log(`my name is ${this.firstName} and i study ${this.course}`);
+// };
+//
+// const mike = new Student('mike', 2020, 'Computer Science');
+// mike.introduce();
+// mike.calcAge()
 
-Person.prototype.calcAge = function () {
-  console.log(2037 - this.birthYear);
-};
+class PersonCl {
+  constructor (fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
 
-const Student = function (firstName, birthYear, course) {
-  Person.call(this, firstName, birthYear);
-  this.course = course;
-};
+  calcAge () {
+    console.log(2037 - this.birthYear);
+  }
 
-Student.prototype=Object.create(Person.prototype)
+  greet () {
+    console.log(`Hey ${this.fullName}`);
+  }
 
-Student.prototype.introduce = function () {
-  console.log(`my name is ${this.firstName} and i study ${this.course}`);
-};
+  get age () {
+    return 2037 - this.birthYear;
+  }
 
-const mike = new Student('mike', 2020, 'Computer Science');
-mike.introduce();
-mike.calcAge()
+  set fullName (name) {
+    if ( name.includes(' ') ) {
+      this._fullName = name;
+    } else {
+      alert(`${name} is not a full name!`);
+    }
+  }
+
+  get fullName () {
+    return this._fullName;
+  }
+
+  static hey () {
+    console.log(`Hey there`);
+  }
+
+
+}
+
+class Student extends PersonCl {
+  constructor (fullName, birthYear, course) {
+    super(fullName, birthYear);
+    this.course = course;
+  }
+
+  introduce(){
+    console.log(`my name is ${this.fullName} and i study ${this.course}`);
+  }
+
+  calcAge(){
+    console.log(`i'm ${2037-this.birthYear} years old, but as a student i feel more like ${2037-this.birthYear+10}`);
+  }
+}
+
+const martha=new Student('lasha tatu',2012,'Computer science')
+
+martha.introduce()
