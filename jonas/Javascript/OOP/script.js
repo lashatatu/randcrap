@@ -121,59 +121,150 @@
 // const mike = new Student('mike', 2020, 'Computer Science');
 // mike.introduce();
 // mike.calcAge()
+/*
 
-class PersonCl {
-  constructor (fullName, birthYear) {
-    this.fullName = fullName;
-    this.birthYear = birthYear;
+ class PersonCl {
+ constructor (fullName, birthYear) {
+ this.fullName = fullName;
+ this.birthYear = birthYear;
+ }
+
+ calcAge () {
+ console.log(2037 - this.birthYear);
+ }
+
+ greet () {
+ console.log(`Hey ${this.fullName}`);
+ }
+
+ get age () {
+ return 2037 - this.birthYear;
+ }
+
+ set fullName (name) {
+ if ( name.includes(' ') ) {
+ this._fullName = name;
+ } else {
+ alert(`${name} is not a full name!`);
+ }
+ }
+
+ get fullName () {
+ return this._fullName;
+ }
+
+ static hey () {
+ console.log(`Hey there`);
+ }
+
+
+ }
+
+ class Student extends PersonCl {
+ constructor (fullName, birthYear, course) {
+ super(fullName, birthYear);
+ this.course = course;
+ }
+
+ introduce(){
+ console.log(`my name is ${this.fullName} and i study ${this.course}`);
+ }
+
+ calcAge(){
+ console.log(`i'm ${2037-this.birthYear} years old, but as a student i feel more like ${2037-this.birthYear+10}`);
+ }
+ }
+
+ const martha=new Student('lasha tatu',2012,'Computer science')
+
+ martha.introduce()
+
+ */
+
+// inheritance between classes
+/*
+
+ const PersonProto = {
+ calcAge () {
+ console.log(2037 - this.birthYear);
+ },
+ init (firstName, birthYear) {
+ this.firstName = firstName;
+ this.birthYear = birthYear;
+ },
+
+ };
+
+ const steven = Object.create(PersonProto);
+
+ const StudentProto = Object.create(PersonProto);
+
+ StudentProto.init=function (firstName,birthYear,course){
+ PersonProto.init.call(this,firstName, birthYear)
+ this.course=course
+ }
+ const jay=Object.create(StudentProto)
+
+ jay.init('jay',2010,'computer science')
+
+ */
+
+// another class example
+/*
+
+class Account {
+  // public fields
+  locale = navigator.language;
+
+  // private fields
+  #movements=[]
+  #pin
+
+
+  constructor (owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    this.#pin = pin;
+    // this._movements = [];
+    // this.locale = navigator.language;
+
+    console.log(`thanks for opening an account, ${owner}`);
   }
 
-  calcAge () {
-    console.log(2037 - this.birthYear);
+  getMovements () {
+    return this.#movements;
   }
 
-  greet () {
-    console.log(`Hey ${this.fullName}`);
+  deposit (val) {
+    this.#movements.push(val);
   }
 
-  get age () {
-    return 2037 - this.birthYear;
+  withdraw (val) {
+    this.deposit(-val);
   }
 
-  set fullName (name) {
-    if ( name.includes(' ') ) {
-      this._fullName = name;
-    } else {
-      alert(`${name} is not a full name!`);
+  _approveLoan (val) {
+    return true;
+  }
+
+  requestLoan (val) {
+    if ( this._approveLoan(val) ) {
+      this.deposit(val);
+      console.log(`loan approved`);
     }
   }
 
-  get fullName () {
-    return this._fullName;
-  }
-
-  static hey () {
-    console.log(`Hey there`);
-  }
-
 
 }
 
-class Student extends PersonCl {
-  constructor (fullName, birthYear, course) {
-    super(fullName, birthYear);
-    this.course = course;
-  }
+const acc1 = new Account('jonas', 'eur', 111);
 
-  introduce(){
-    console.log(`my name is ${this.fullName} and i study ${this.course}`);
-  }
+acc1.withdraw(100);
+acc1.requestLoan(1000);
 
-  calcAge(){
-    console.log(`i'm ${2037-this.birthYear} years old, but as a student i feel more like ${2037-this.birthYear+10}`);
-  }
-}
+console.log(acc1);
+*/
 
-const martha=new Student('lasha tatu',2012,'Computer science')
+// chaining methods
 
-martha.introduce()
+
