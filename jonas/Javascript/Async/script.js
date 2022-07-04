@@ -38,6 +38,7 @@ const countriesContainer = document.querySelector('.countries');
  getCountryData('usa')
 
  */
+/*
 
 const renderCountry = function (data,className='') {
   const html = `
@@ -86,5 +87,14 @@ const getCountryAndNeighbour = function (country) {
 };
 
 getCountryAndNeighbour('georgia');
+
+*/
+
+// const request=fetch('https://restcountries.com/v2/name/${country}?fullText=true')
+const request=fetch('https://restcountries.com/v2/name/georgia?fullText=true')
+console.log(request);
+
+
+
 
 
