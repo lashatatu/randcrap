@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 'use strict';
 const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
@@ -25,7 +28,7 @@ const renderError = function (msg) {
 };
 
 const whereAmI = function (lat, lng) {
-  fetch(`https://geocode.xyz/${lat},${lng}?geoit=json&auth=213871850443102761668x8326`)
+  fetch(`https://geocode.xyz/${lat},${lng}?geoit=json&auth=${process.env.GEOCODE}`)
     .then((res) => {
       if ( !res.ok ) {
         throw new Error(`Problem with geocoding ${res.status}`);
