@@ -207,47 +207,75 @@ const renderError = function (msg) {
  */
 /*
 
+ const getPosition = function () {
+ return new Promise(function (resolve, reject) {
+ // navigator.geolocation.getCurrentPosition(position => resolve(position), err => reject(err));
+ navigator.geolocation.getCurrentPosition(resolve, reject);
+ });
+ };
+
+ getPosition()
+ .then(pos => console.log(pos));
+
+ const whereAmI = function () {
+ getPosition()
+ .then(pos => {
+ const {
+ latitude: lat,
+ longitude: lng,
+ } = pos.coords;
+ return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json&auth=`);
+ })
+ .then((res) => {
+ if ( !res.ok ) {
+ throw new Error(`Problem with geocoding ${res.status}`);
+ }
+ return res.json();
+ })
+ .then(data => {
+ console.log(data);
+
+ return fetch(`https://restcountries.com/v2/name/${data.country}?fullText=true`);
+ })
+ .then(res => {
+ if ( !res.ok ) {
+ throw new Error(`Country not found (${res.status})`);
+ }
+
+ return res.json();
+ })
+ .then(data => renderCountry(data[0]))
+ .catch(err => console.error(`${err.message}`));
+ };
+
+ btn.addEventListener('click', whereAmI);
+
+ */
+
 const getPosition = function () {
   return new Promise(function (resolve, reject) {
-    // navigator.geolocation.getCurrentPosition(position => resolve(position), err => reject(err));
     navigator.geolocation.getCurrentPosition(resolve, reject);
   });
 };
 
-getPosition()
-  .then(pos => console.log(pos));
+// async functions
 
-const whereAmI = function () {
-  getPosition()
-    .then(pos => {
-      const {
-        latitude: lat,
-        longitude: lng,
-      } = pos.coords;
-      return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json&auth=213871850443102761668x8326`);
-    })
-    .then((res) => {
-      if ( !res.ok ) {
-        throw new Error(`Problem with geocoding ${res.status}`);
-      }
-      return res.json();
-    })
-    .then(data => {
-      console.log(data);
+const whereAmI = async function (country) {
 
-      return fetch(`https://restcountries.com/v2/name/${data.country}?fullText=true`);
-    })
-    .then(res => {
-      if ( !res.ok ) {
-        throw new Error(`Country not found (${res.status})`);
-      }
+  const pos = await getPosition();
+  const {
+    latitude: lat,
+    longitude: lng,
+  } = pos.coords;
+  const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+  const dataGeo = await resGeo.json();
+  console.log(dataGeo);
 
-      return res.json();
-    })
-    .then(data => renderCountry(data[0]))
-    .catch(err => console.error(`${err.message}`));
+  const res = await fetch(`https://restcountries.com/v2/name/${dataGeo.country}?fullText=true`);
+  const data = await res.json();
+  console.log(data);
+  renderCountry(data[0]);
 };
 
-btn.addEventListener('click', whereAmI);
+whereAmI();
 
-*/
