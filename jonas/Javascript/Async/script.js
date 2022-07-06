@@ -275,6 +275,8 @@ const whereAmI = async function (country) {
     const data = await res.json();
     console.log(data);
     renderCountry(data[0]);
+
+    return `you are in ${dataGeo.region}, ${dataGeo.country}`
   } catch ( err ) {
     console.error(err);
     renderCountry(`something went wrong ${err.message}`)
@@ -282,7 +284,6 @@ const whereAmI = async function (country) {
 
 };
 
-whereAmI();
-
+whereAmI().then(city=>console.log(city))
 
 
