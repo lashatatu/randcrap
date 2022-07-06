@@ -287,6 +287,9 @@ const getPosition = function () {
  whereAmI().then(city=>console.log(city))
 
  */
+/*
+
+// promises combinator
 
 const get3Countries = async function (c1, c2, c3) {
   try {
@@ -305,4 +308,6 @@ const get3Countries = async function (c1, c2, c3) {
 };
 
 get3Countries('portugal', 'georgia', 'china');
+
+*/
 
