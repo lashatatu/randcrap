@@ -261,21 +261,28 @@ const getPosition = function () {
 // async functions
 
 const whereAmI = async function (country) {
+  try {
+    const pos = await getPosition();
+    const {
+      latitude: lat,
+      longitude: lng,
+    } = pos.coords;
+    const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+    const dataGeo = await resGeo.json();
+    console.log(dataGeo);
 
-  const pos = await getPosition();
-  const {
-    latitude: lat,
-    longitude: lng,
-  } = pos.coords;
-  const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
-  const dataGeo = await resGeo.json();
-  console.log(dataGeo);
+    const res = await fetch(`https://restcountries.com/v2/name/${dataGeo.country}?fullText=true`);
+    const data = await res.json();
+    console.log(data);
+    renderCountry(data[0]);
+  } catch ( err ) {
+    console.error(err);
+    renderCountry(`something went wrong ${err.message}`)
+  }
 
-  const res = await fetch(`https://restcountries.com/v2/name/${dataGeo.country}?fullText=true`);
-  const data = await res.json();
-  console.log(data);
-  renderCountry(data[0]);
 };
 
 whereAmI();
+
+
 
