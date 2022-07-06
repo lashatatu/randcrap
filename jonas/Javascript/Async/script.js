@@ -205,6 +205,7 @@ const renderError = function (msg) {
  .catch(err => console.error(err));
 
  */
+/*
 
 const getPosition = function () {
   return new Promise(function (resolve, reject) {
@@ -248,3 +249,5 @@ const whereAmI = function () {
 };
 
 btn.addEventListener('click', whereAmI);
+
+*/
