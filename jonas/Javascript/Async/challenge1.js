@@ -1,3 +1,4 @@
+/*
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -52,3 +53,4 @@ const whereAmI = function (lat, lng) {
 };
 
 whereAmI(52.508, 13.381);
+*/
