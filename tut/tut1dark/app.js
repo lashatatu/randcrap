@@ -6,3 +6,5 @@ const body = document.querySelector('body');
 click.addEventListener('click', () => {
   body.classList.toggle('dark');
 });
+
+// Language: javascript
