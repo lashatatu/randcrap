@@ -1,0 +1,29 @@
+h1 {
+	font-size: 26px;
+	font-family: "Poppins", sans-serif;
+	text-transform: uppercase;
+	font-style: italic;
+}
+
+h2 {
+	font-size: 40px;
+	font-family: "Poppins", sans-serif;
+}
+
+h3 {
+	font-size: 30px;
+	font-family: "Poppins", sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+p {
+	font-size: 22px;
+	font-family: "Poppins", sans-serif;
+	line-height: 1.5;
+}
+
+li {
+	font-family: "Poppins", sans-serif;
+	font-size: 20px;
+}
