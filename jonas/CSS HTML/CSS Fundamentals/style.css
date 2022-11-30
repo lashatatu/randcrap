@@ -9,6 +9,11 @@ body {
 	border-top: 10px solid #1098AD;
 }
 
+.container {
+	width: 700px;
+	margin: 0 auto;
+}
+
 .main-header {
 	background-color: #F7F7F7;
 	padding: 20px 40px;
@@ -146,7 +151,7 @@ a:active {
 	font-style: italic;
 }
 
-.post-img{
+.post-img {
 	width: 100%;
 	height: auto;
 }
