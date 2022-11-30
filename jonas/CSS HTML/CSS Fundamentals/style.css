@@ -1,6 +1,10 @@
-h1, h2, h3, h4, p, li {
+*{
+
+}
+
+body {
+	color: #444444;
 	font-family: "Poppins", sans-serif;
-	color: #454444;
 }
 
 h1, h2, h3 {
@@ -96,13 +100,13 @@ a:visited {
 	color: #1098AD;
 }
 
-a:hover{
+a:hover {
 	color: #1098AD;
 	font-weight: bold;
 	text-decoration: underline orange;
 }
 
-a:active{
+a:active {
 	background-color: black;
 	font-style: italic;
 }
