@@ -61,12 +61,24 @@ footer p {
 	list-style: none;
 }
 
-.main-header{
-	background-color: #f7f7f7;
+.main-header {
+	background-color: #F7F7F7;
 }
 
-aside{
-	background-color: #f7f7f7;
+aside {
+	background-color: #F7F7F7;
 	border: 5px solid #1098AD;
 	border-radius: 0.7rem;
+}
+
+li:first-child {
+	font-weight: bold;
+}
+
+li:last-child {
+	font-style: italic;
+}
+
+li:nth-child(even) {
+
 }
