@@ -16,7 +16,7 @@
 
 			.el--3 {
 				background-color: green;
-				height: 150px;
+				/*height: 150px;*/
 			}
 
 			.el--4 {
@@ -49,10 +49,10 @@
 
 				/* CSS GRID */
 				display: grid;
-				grid-template-columns: 250px 250px 150px 150px;
-				grid-template-rows: 300px 200px;
-
-				gap: 30px;
+				grid-template-columns: repeat(4, 1fr);
+				grid-template-rows: 1fr 1fr;
+				height: 500px;
+				gap: 15px;
 			}
 
 			.container--2 {
