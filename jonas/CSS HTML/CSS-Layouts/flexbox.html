@@ -49,7 +49,23 @@
 				/* FLEXBOX */
 				display: flex;
 				align-items: center;
-				justify-content: space-between;
+				justify-content: flex-start;
+			}
+
+			.el{
+				/*
+				flex-grow: 0;
+				flex-shrink: 1;
+				flex-basis: auto;
+				*/
+				flex: 1;
+			}
+			.el--1 {
+				align-self: flex-start;
+			}
+
+			.el--5 {
+				align-self: stretch;
 			}
 		</style>
 	</head>
