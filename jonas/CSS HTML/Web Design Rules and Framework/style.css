@@ -18,7 +18,7 @@ FONT SIZE SYSTEM (px)
 body {
 	font-family: "Inter", sans-serif;
 	color: #343A40;
-	border-bottom: 8px solid #087f5b;
+	border-bottom: 8px solid #087F5B;
 }
 
 .container {
@@ -104,6 +104,10 @@ img {
 
 /* FEATURES */
 .features-icon {
+	stroke: #087F5B;
+	width: 32px;
+	height: 32px;
+	margin-bottom: 16px;
 }
 
 .features-title {
@@ -142,10 +146,11 @@ img {
 }
 
 /* CHAIRS */
-.chair{
+.chair {
 	padding: 24px;
 	box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.07);
 }
+
 .chair-box {
 
 }
@@ -172,6 +177,9 @@ h3 {
 }
 
 .chair-icon {
+	stroke: #087F5B;
+	width: 24px;
+	height: 24px;
 }
 
 .chair-price {
