@@ -18,7 +18,6 @@ FONT SIZE SYSTEM (px)
 body {
 	font-family: "Inter", sans-serif;
 	color: #343A40;
-	border-bottom: 8px solid #087F5B;
 }
 
 .container {
