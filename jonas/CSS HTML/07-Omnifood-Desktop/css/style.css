@@ -31,8 +31,32 @@ body {
 	color: #555555;
 }
 
+/*****************************/
+/*general reusable components*/
+/*****************************/
 
-/*general components*/
+.container {
+	max-width: 120rem;
+	padding: 0 3.2rem;
+	margin: 0 auto;
+}
+
+.grid {
+	display: grid;
+	gap: 9.6rem;
+}
+
+.grid--2-cols {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+	grid-template-columns: repeat(4, 1fr);
+}
 
 .heading-primary {
 	font-size: 5.2rem;
@@ -83,7 +107,9 @@ body {
 	margin-right: 1.6rem;
 }
 
+/*****************************/
 /*header*/
+/*****************************/
 
 .header {
 	display: flex;
@@ -100,7 +126,9 @@ body {
 }
 
 
+/*****************************/
 /*navigation*/
+/*****************************/
 
 .main-nav-list {
 	list-style: none;
@@ -137,7 +165,10 @@ body {
 	background-color: #CF711F;
 }
 
+/*****************************/
 /*hero section*/
+/*****************************/
+
 .section-hero {
 	background-color: #FDF2E9;
 	padding: 4.8rem 0 9.6rem 0;
@@ -198,3 +229,16 @@ body {
 	color: #CF711F;
 	font-weight: 700;
 }
+
+
+/*****************************/
+/*how it works*/
+/*****************************/
+
+.section-how {
+	padding: 9.6rem 0;
+	background-color: orangered;
+}
+
+
+
