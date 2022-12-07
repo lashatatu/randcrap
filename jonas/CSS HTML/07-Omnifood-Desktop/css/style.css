@@ -31,7 +31,13 @@ body {
 	color: #555555;
 }
 
-.test {
-	width: 1000px;
-	background-color: red;
+.hero {
+	max-width: 130rem;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.hero-img {
+	width: 100%;
 }
