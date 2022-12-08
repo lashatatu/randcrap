@@ -133,7 +133,7 @@
 	letter-spacing: 0.75px;
 	align-items: center;
 	margin-bottom: 2.4rem;
-	color: #888;
+	color: #888888;
 }
 
 .logos {
@@ -209,7 +209,35 @@
 	width: 35%;
 }
 
+/*****************************/
+/*Meals Section*/
+/*****************************/
 
+.section-meals {
+	padding: 9.6rem 0;
+}
+
+.meal-title {
+	font-size: 2rem;
+	color: #333333;
+	font-weight: 600;
+	margin-bottom: 3.2rem;
+}
+
+.meal-attributes {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.meal-attribute {
+	font-size: 1.8rem;
+}
+
+.meal-img {
+	width: 100%;
+}
 
 
 
