@@ -299,26 +299,6 @@
 	font-size: 1.8rem;
 }
 
-.list {
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	gap: 1.6rem;
-}
-
-.list-item {
-	font-size: 1.8rem;
-	display: flex;
-	align-items: center;
-	gap: 1.6rem;
-}
-
-.list-icon {
-	width: 3rem;
-	height: 3rem;
-	color: #E67E22;
-}
-
 
 /*****************************/
 /*Meals Testimonials*/
@@ -368,7 +348,7 @@
 	padding: 1.6rem;
 }
 
-.gallery-item{
+.gallery-item {
 	overflow: hidden;
 }
 
@@ -378,7 +358,52 @@
 	transition: all 0.3s ease-in-out;
 }
 
-.gallery-item img:hover{
+.gallery-item img:hover {
 	transform: rotate(9deg) scale(1.1);
 }
 
+/*****************************/
+/*Meals Testimonials*/
+/*****************************/
+
+.section-pricing {
+	padding: 9.6rem 0;
+}
+
+.plan-header {
+	text-align: center;
+	margin-bottom: 4.8rem;
+}
+
+.plan-name {
+	color: #CF711F;
+	font-weight: 600;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.75rem;
+	margin-bottom: 3.2rem;
+}
+
+.plan-price {
+	font-size: 6.2rem;
+	font-weight: 600;
+	color: #333333;
+	margin-bottom: 1.6rem;
+}
+
+.plan-price span {
+	font-size: 3rem;
+	font-weight: 500;
+	margin-right: 0.8rem;
+}
+
+.plan-text {
+	font-size: 1.6rem;
+	line-height: 1.8;
+	color: #6F6F6F;
+}
+
+.plan-sing-up {
+	text-align: center;
+	margin-top: 4.8rem;
+}
