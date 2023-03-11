@@ -3,3 +3,12 @@
 	padding: 0;
 	margin: 0;
 }
+
+h1{
+	text-align: center;
+	font-family: sans-serif;
+}
+
+h2{
+	color: #FFC0CB;
+}

@@ -1,0 +1,34 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Roboto, sans-serif;
+	background-color: #FDF9FD;
+}
+
+h1 {
+	font-size: 100px;
+	line-height: 1;
+	font-weight: 400;
+}
+
+h2 {
+	font-size: 50px;
+
+}
+
+p {
+	font-size: 20px;
+
+}
+
+div {
+	width: 60%;
+	margin-left: 100px;
+	margin-top: 300px;
+}
+
+span {
+	text-shadow: 0 -6.25px #0C2FFB, 0 -12.5px #2CFCFD, 0 6.25px #FB203B, 0 12.5px #FEFC4B;
+}
