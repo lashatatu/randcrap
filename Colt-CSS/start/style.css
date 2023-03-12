@@ -4,11 +4,16 @@
 	margin: 0;
 }
 
+
 h1{
-	text-align: center;
-	font-family: sans-serif;
+	text-transform: uppercase;
+}
+p {
+	text-transform: capitalize;
 }
 
-h2{
-	color: #FFC0CB;
+li{
+	list-style: georgian;
+	font-family: sans-serif;
+	text-align: center;
 }
