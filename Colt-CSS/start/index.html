@@ -5,25 +5,45 @@
 		<meta charset="UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="style.css">
-		<title>CSS Basics</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Merriweather&family=Work+Sans:wght@100;400&display=swap"
+			rel="stylesheet">
+		<link href="style.css" rel="stylesheet"/>
+
+		<title>Styling Text</title>
 	</head>
 
 	<body>
 		<h1>Amadeus</h1>
 		<div>
-			<a href="/drama">Drama</a>
+			<a class="tag" href="/drama">Drama</a>
 			,
-			<a href="/music">Music</a>
+			<a class="tag" href="/music">Music</a>
 			,
-			<a href="/history">History</a>
+			<a class="tag" href="http://www.google.com">History</a>
 		</div>
-		<h2>Summary</h2>
+		<h2 class="score">Average Rating: 9.1/10</h2>
+
+		<ul id="toc">
+			<li>
+				<a href="#summary">Summary</a>
+			</li>
+			<li>
+				<a href="#cast">Cast</a>
+			</li>
+			<li>
+				<a href="#reviews">Reviews</a>
+			</li>
+		</ul>
+		<h2 id="summary">Summary</h2>
 		<p>
 			<a href="https://en.wikipedia.org/wiki/Antonio_Salieri">Antonio Salieri</a>
 			believes that
 			<a href="https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart">Wolfgang Amadeus Mozart</a>
-			's music is divine and
+			's music is divine
+			and
 			miraculous. He wishes he was himself as good a
 			musician as Mozart so that he can praise the Lord through composing. He
 			began his career as a devout man who believes his success and talent as a
@@ -38,7 +58,7 @@
 			mediocrity
 		</p>
 		<h2>Cast</h2>
-		<ul>
+		<ul id="cast">
 			<li>F. Murray Abraham
 				<span>Antonio Salieri</span>
 			</li>
@@ -62,11 +82,11 @@
 			</li>
 		</ul>
 		<hr/>
-		<h2>User Reviews</h2>
+		<h2 id="reviews">User Reviews</h2>
 		<div>
-			<span>Featured Review</span>
+			<span id="featured">Featured Review</span>
 			<h3>A Genius Movie About A Genius</h3>
-			<h4>10/10</h4>
+			<h4 class="score">10/10</h4>
 			<p>
 				I thought that it would be impossible to make a movie like this one!
 				Peter Schaffer's original play inspired Milos Forman, the great czech
@@ -82,7 +102,7 @@
 		</div>
 		<div>
 			<h3>True Gem For Music Fans</h3>
-			<h4>9.5/10</h4>
+			<h4 class="score">9.5/10</h4>
 			<p>
 				I'd like to point out a few facts before I review the movie. First of
 				all, Mozart died at home surrounded by his family, pupil and a priest.
@@ -92,95 +112,53 @@
 				he used Pushkin's drama for the libretto. So, the rumor that Salieri
 				killed Mozart has been around for almost a couple of centuries though we
 				all know there isn't an iota of veracity in it.
+
+		</div>
+		<div>
+			<h3>A Genius Movie About A Genius</h3>
+			<h4 class="score">10/10</h4>
+			<p>
+				I thought that it would be impossible to make a movie like this one!
+				Peter Schaffer's original play inspired Milos Forman, the great czech
+				film maker, that surprised the world with "One flew over the cuckoo's
+				nest" (1975). The sublime, almost over-human performance by Frank Murray
+				Abraham (the Mozart enemy and secret admirer, Salieri) is one of the
+				keys for the movie success, mostly to it's depth. The perfect sense of
+				timing by Milos Forman is admirable, he knows when to play wich music.
+				All the scenarios: opera houses, palaces, streets, etc., are details
+				absolutely harmonious! One of this classic secret was that Forman
+				gathered "the" team, perfect team work.
 			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, cumque unde nulla, ab molestias possimus
-				 ut
-				 nam quaerat laboriosam dolor vitae quam dicta sequi excepturi quas odit, doloremque et.
-			</p>
+		</div>
+		<div>
+			<h2>FAQs</h2>
+			<ol>
+				<li>Was Salieri a real person or just made up for the movie?
+					<ul>
+						<li>Saliera was a real person!</li>
+						<li>Yes, Antonio Salieri [1750-1825] was a real person, an Italian composer and conductor. As the
+								Austrian imperial Kapellmeister from 1788 to 1824, he was one of the most important and famous
+								musicians of his time.
+						</li>
+					</ul>
+				</li>
+				<li>What is the music in the movie?
+					<ul>
+						<li>First cut, Leopold's theme (recurring)</li>
+						<li>Opening credits: Symphony No. 25 In G Minor</li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+
+
+		<div>
+			<h2>Leave Your Own Review</h2>
+			<input type="text" placeholder="username">
+			<input type="number" placeholder="rating">
+			<label for="permission">I give you permission to use my rating:</label>
+			<input type="checkbox" id="permission">
+			<button>Submit</button>
 		</div>
 	</body>
 

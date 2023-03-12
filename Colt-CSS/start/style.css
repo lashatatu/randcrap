@@ -3,17 +3,3 @@
 	padding: 0;
 	margin: 0;
 }
-
-
-h1{
-	text-transform: uppercase;
-}
-p {
-	text-transform: capitalize;
-}
-
-li{
-	list-style: georgian;
-	font-family: sans-serif;
-	text-align: center;
-}
