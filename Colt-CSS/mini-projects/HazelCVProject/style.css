@@ -27,7 +27,7 @@ body {
 .navbar p {
 	font-size: 1.2rem;
 	font-weight: bold;
-margin: 0;
+	margin: 0;
 }
 
 .navbar .contact {
@@ -39,4 +39,15 @@ margin: 0;
 
 .navbar .contact:hover {
 	opacity: 0.8;
+}
+
+.hero-content {
+	padding: 0 15%;
+}
+
+.tagline {
+	font-size: 4.5rem;
+	color: #FFFFFF;
+	letter-spacing: 2px;
+	padding: 32px 0;
 }
