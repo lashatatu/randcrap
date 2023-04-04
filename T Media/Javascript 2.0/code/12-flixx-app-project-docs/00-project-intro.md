@@ -12,4 +12,4 @@ In this project, we are going to build a movie info application that will fetch 
 
 We will be working with the fetch api, async/await, the DOM and pretty much everything that we have talked about up until this point.
 
-<img src="./images/screen.jpg" width="500">
+<img src="images/screen.jpg" width="500">
