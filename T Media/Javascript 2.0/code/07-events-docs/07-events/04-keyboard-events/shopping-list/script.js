@@ -12,7 +12,8 @@ const onKeyDown = (e) => {
   // key
   // if (e.key === 'Enter') {
   //   alert('You pressed enter');
-  // }
+  // }asd
+
 
   // keyCode
   // https://www.toptal.com/developers/keycode/table-of-all-keycodes
@@ -24,6 +25,8 @@ const onKeyDown = (e) => {
   if (e.code === 'Digit1') {
     console.log('You pressed 1');
   }
+
+  console.log('key: ' + e.key);
 
   // repeat
   if (e.repeat) {
