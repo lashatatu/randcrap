@@ -4,6 +4,15 @@ const itemList = document.getElementById("item-list");
 const clearBtn = document.getElementById("clear");
 const itemFilter = document.getElementById("filter");
 
+function displayItems() {
+  const itemsFromStorage = getItemsFromStorage();
+
+  itemsFromStorage.forEach((item) => {
+    addItemToDOM(item);
+  });
+  checkUI();
+}
+
 // event listeners
 function onAddItemSubmit(e) {
   e.preventDefault();
@@ -35,20 +44,6 @@ function addItemToDOM(item) {
   itemList.appendChild(li);
 }
 
-function addItemToStorage(item) {
-  let itemsFromStorage;
-
-  if (localStorage.getItem("items") === null) {
-    itemsFromStorage = [];
-  } else {
-    itemsFromStorage = JSON.parse(localStorage.getItem("items"));
-  }
-
-  itemsFromStorage.push(item);
-
-  localStorage.setItem("items", JSON.stringify(itemsFromStorage));
-}
-
 function createButton(cssClass) {
   const button = document.createElement("button");
   button.className = cssClass;
@@ -61,6 +56,26 @@ function createIcon(cssClass) {
   const icon = document.createElement("i");
   icon.className = cssClass;
   return icon;
+}
+
+function addItemToStorage(item) {
+  const itemsFromStorage=getItemsFromStorage();
+
+  itemsFromStorage.push(item);
+
+  localStorage.setItem("items", JSON.stringify(itemsFromStorage));
+}
+
+function getItemsFromStorage() {
+  let itemsFromStorage;
+
+  if (localStorage.getItem("items") === null) {
+    itemsFromStorage = [];
+  } else {
+    itemsFromStorage = JSON.parse(localStorage.getItem("items"));
+  }
+
+  return itemsFromStorage;
 }
 
 function removeItem(e) {
@@ -107,9 +122,14 @@ function checkUI() {
   }
 }
 
-itemForm.addEventListener("submit", onAddItemSubmit);
-itemList.addEventListener("click", removeItem);
-clearBtn.addEventListener("click", clearItems);
-itemFilter.addEventListener("input", filterItems);
+function init(){
+  itemForm.addEventListener("submit", onAddItemSubmit);
+  itemList.addEventListener("click", removeItem);
+  clearBtn.addEventListener("click", clearItems);
+  itemFilter.addEventListener("input", filterItems);
+  document.addEventListener("DOMContentLoaded", displayItems);
 
-checkUI();
+  checkUI();
+}
+
+init();
