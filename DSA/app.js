@@ -1,5 +1,41 @@
+
+
+
+//////////////////////////////////////////////////////////////////
+
 // Trapping Rain Water
+/*
 
+const trap = function (height) {
+  let left = 0;
+  let right = height.length - 1;
+  let leftMax = 0;
+  let rightMax = 0;
+  let total = 0;
+
+  while (left < right) {
+    if (height[left] <= height[right]) {
+      if (height[left] >= leftMax) {
+        leftMax = height[left];
+      } else {
+        total += leftMax - height[left];
+      }
+      left++
+    }else {
+      if (height[right] >= rightMax) {
+        rightMax = height[right];
+      } else {
+        total += rightMax - height[right];
+      }
+      right--
+    }
+  }
+  return total
+};
+
+*/
+//////////////////////////////////////////////////////////////////
+/*
 const trap = function (height) {
   let totalWater = 0;
   for (let i = 0; i < height.length; i++) {
@@ -15,7 +51,7 @@ const trap = function (height) {
       maxRight = Math.max(maxRight, height[rightI]);
       rightI++;
     }
-    const currentWater = Math.max(maxLeft, maxRight) - height[i];
+    const currentWater = Math.min(maxLeft, maxRight) - height[i];
     if (currentWater >= 0) {
       totalWater += currentWater;
     }
@@ -23,31 +59,12 @@ const trap = function (height) {
   return totalWater;
 };
 
-const trap = function (height) {
-  let totalWater = 0;
 
-  for (let i = 0; i < height.length; i++) {
-    let leftI = i;
-    let rightI = i;
-    let maxLeft = 0;
-    let maxRight = 0;
-    while (leftI >= 0) {
-      maxLeft = Math.max(maxLeft, height[leftI]);
-      leftI--;
-    }
-    while (rightI < height.length) {
-      maxRight = Math.max(maxRight, height[rightI]);
-      rightI++;
-    }
-    const currentWater = Math.max(maxLeft, maxRight) - height[i];
-    if (currentWater >= 0) {
-      totalWater += currentWater;
-    }
-  }
-  return totalWater;
-};
 
 trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]);
+ */
+
+
 
 //////////////////////////////////////////////////////////////////
 
