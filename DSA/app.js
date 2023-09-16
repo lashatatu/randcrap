@@ -1,70 +1,162 @@
+function generateHashtag(str) {
+  if (str.trim() === "") {
+    return false;
+  }
+  const words = str.split(" ");
+  for (let i = 0; i < words.length; i++) {
+    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+  }
+  const hashtag = "#" + words.join("");
+  if (hashtag.length > 140) {
+    return false;
+  }
+  return hashtag;
+}
 
+generateHashtag("");
+generateHashtag(" ");
+generateHashtag("Expected an empty string to return false");
+generateHashtag("Still an empty string");
+generateHashtag("Do We have A Hashtag");
+generateHashtag(
+  "Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong CatLooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooongLooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong"
+);
+/*
 
+ //Backspace String Compare
+
+ const buildString = function (string) {
+ const builtArray = [];
+ for (let i = 0; i < string.length; i++) {
+ if (string[i] !== "#") {
+ builtArray.push(string[i]);
+ } else {
+ builtArray.pop();
+ }
+ }
+ return builtArray;
+ };
+
+ let backspaceCompare = function (s, t) {
+ const finalS = buildString(s);
+ const finalT = buildString(t);
+ if (finalS.length === finalT.length) {
+ return false;
+ } else {
+ for (let i = 0; i < finalS.length; i++) {
+ if (finalS[i] !== finalT[i]) {
+ return false;
+ }
+ }
+ }
+ return true;
+ };
+
+ backspaceCompare("ab#b", "ad#b");
+ backspaceCompare("ab##", "c#d#");
+ backspaceCompare("a#c", "b");
+ */
+
+/*
+
+ // My Solution
+ let backspaceCompare = function (s, t) {
+ let sString = "";
+ let tString = "";
+ for (let i = 0; i < s.length; i++) {
+ if (s[i] === "#") {
+ sString = s.substring(0, i - 1) + s.substring(i + 1, s.length);
+ }
+ }
+ for (let j = 0; j < s.length; j++) {
+ if (t[j] === "#") {
+ tString = t.substring(0, j - 1) + t.substring(j + 1, j.length);
+ }
+ }
+ if (tString === sString) {
+ console.log(sString,tString, 'true');
+
+ return true;
+ }
+ if(tString.length===0&&sString.length===0){
+ console.log(sString,tString, 'true');
+ return true
+ }
+ if(tString!==sString){
+ console.log(sString,tString, 'false');
+ return false
+ }
+
+ };
+
+ backspaceCompare("ab#b", "ad#b");
+ backspaceCompare("ab##", "c#d#");
+ backspaceCompare("a#c", "b");
+
+ */
 
 //////////////////////////////////////////////////////////////////
 
 // Trapping Rain Water
 /*
 
-const trap = function (height) {
-  let left = 0;
-  let right = height.length - 1;
-  let leftMax = 0;
-  let rightMax = 0;
-  let total = 0;
+ const trap = function (height) {
+ let left = 0;
+ let right = height.length - 1;
+ let leftMax = 0;
+ let rightMax = 0;
+ let total = 0;
 
-  while (left < right) {
-    if (height[left] <= height[right]) {
-      if (height[left] >= leftMax) {
-        leftMax = height[left];
-      } else {
-        total += leftMax - height[left];
-      }
-      left++
-    }else {
-      if (height[right] >= rightMax) {
-        rightMax = height[right];
-      } else {
-        total += rightMax - height[right];
-      }
-      right--
-    }
-  }
-  return total
-};
+ while (left < right) {
+ if (height[left] <= height[right]) {
+ if (height[left] >= leftMax) {
+ leftMax = height[left];
+ } else {
+ total += leftMax - height[left];
+ }
+ left++
+ }else {
+ if (height[right] >= rightMax) {
+ rightMax = height[right];
+ } else {
+ total += rightMax - height[right];
+ }
+ right--
+ }
+ }
+ return total
+ };
 
-*/
+ */
 //////////////////////////////////////////////////////////////////
 /*
-const trap = function (height) {
-  let totalWater = 0;
-  for (let i = 0; i < height.length; i++) {
-    let leftI = i;
-    let rightI = i;
-    let maxLeft = 0;
-    let maxRight = 0;
-    while (leftI >= 0) {
-      maxLeft = Math.max(maxLeft, height[leftI]);
-      leftI--;
-    }
-    while (rightI < height.length) {
-      maxRight = Math.max(maxRight, height[rightI]);
-      rightI++;
-    }
-    const currentWater = Math.min(maxLeft, maxRight) - height[i];
-    if (currentWater >= 0) {
-      totalWater += currentWater;
-    }
-  }
-  return totalWater;
-};
+ const trap = function (height) {
+ let totalWater = 0;
+ for (let i = 0; i < height.length; i++) {
+ let leftI = i;
+ let rightI = i;
+ let maxLeft = 0;
+ let maxRight = 0;
+ while (leftI >= 0) {
+ maxLeft = Math.max(maxLeft, height[leftI]);
+ leftI--;
+ }
+ while (rightI < height.length) {
+ maxRight = Math.max(maxRight, height[rightI]);
+ rightI++;
+ }
+ const currentWater = Math.min(maxLeft, maxRight) - height[i];
+ if (currentWater >= 0) {
+ totalWater += currentWater;
+ }
+ }
+ return totalWater;
+ };
 
 
 
-trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]);
+ trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]);
  */
-
-
 
 //////////////////////////////////////////////////////////////////
 
