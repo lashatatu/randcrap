@@ -1,21 +1,72 @@
+// Trapping Rain Water
 
+const trap = function (height) {
+  let totalWater = 0;
+  for (let i = 0; i < height.length; i++) {
+    let leftI = i;
+    let rightI = i;
+    let maxLeft = 0;
+    let maxRight = 0;
+    while (leftI >= 0) {
+      maxLeft = Math.max(maxLeft, height[leftI]);
+      leftI--;
+    }
+    while (rightI < height.length) {
+      maxRight = Math.max(maxRight, height[rightI]);
+      rightI++;
+    }
+    const currentWater = Math.max(maxLeft, maxRight) - height[i];
+    if (currentWater >= 0) {
+      totalWater += currentWater;
+    }
+  }
+  return totalWater;
+};
+
+const trap = function (height) {
+  let totalWater = 0;
+
+  for (let i = 0; i < height.length; i++) {
+    let leftI = i;
+    let rightI = i;
+    let maxLeft = 0;
+    let maxRight = 0;
+    while (leftI >= 0) {
+      maxLeft = Math.max(maxLeft, height[leftI]);
+      leftI--;
+    }
+    while (rightI < height.length) {
+      maxRight = Math.max(maxRight, height[rightI]);
+      rightI++;
+    }
+    const currentWater = Math.max(maxLeft, maxRight) - height[i];
+    if (currentWater >= 0) {
+      totalWater += currentWater;
+    }
+  }
+  return totalWater;
+};
+
+trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]);
+
+//////////////////////////////////////////////////////////////////
 
 /*
 
  // Container With Most Water
  let maxArea = function (heights) {
- let p1 = 0;
- let p2 = heights.length - 1;
+ let i = 0;
+ let j = heights.length - 1;
  let maxArea = 0;
- while (p1< p2) {
- const height = Math.min(heights[p1], heights[p2]);
- const width=p2-p1
+ while (i< j) {
+ const height = Math.min(heights[i], heights[j]);
+ const width=j-i
  const area=height*width;
  maxArea=Math.max(maxArea,area)
- if(heights[p1]<=heights[p2]){
- p1++;
+ if(heights[i]<=heights[j]){
+ i++;
  }else {
- p2--
+ j--
  }
  }
  return maxArea
