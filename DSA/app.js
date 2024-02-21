@@ -1,4 +1,56 @@
-function generateHashtag(str) {
+const aFunction=(x)=>{
+  if(x===1){
+    return 1
+  }else{
+    console.log(x*aFunction(x-1));
+    return x*aFunction(x-1)
+  }
+}
+
+aFunction(3)
+
+// setTimeout(()=>{
+//   console.log('timeout');
+// },0)
+// new Promise((resolve)=>resolve('promise')).then((res)=>console.log(res))
+// console.log('synchronous');
+
+// console.log(NaN || null);
+// console.log("juhn" && 2);
+// console.log('tyler' && undefined);
+// console.log([] || 5);
+//
+
+// const a=[]
+// a[2]=0
+// console.log(a.length);
+
+// const s='123 456 789'
+//
+// console.log(s.slice(s.lastIndexOf(' ')))
+//
+
+// function main(){
+//   myFunction()
+// }
+//
+// main()
+// const myFunction=function theFunction(){
+//   console.log("hhh");
+// }
+
+// console.log(1);
+// setTimeout(function (){
+//   console.log(2);
+// })
+//
+// Promise.resolve().then(function (){
+//   console.log(3);
+// })
+//
+// console.log(4);
+
+/*function generateHashtag(str) {
   if (str.trim() === "") {
     return false;
   }
@@ -24,7 +76,7 @@ generateHashtag(
     "ooooooooooooooooooooooooooooooooooooooooooooooooooo" +
     "oooooooooooooooooooooooooooooooooooooooooooooooooongLooooooooooooooooooooooooooooooooooooooooooooooooooooooo" +
     "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong"
-);
+);*/
 /*
 
  //Backspace String Compare
