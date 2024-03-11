@@ -1,10 +1,10 @@
-'use strict';
+console.log(1);
 
-const click = document.querySelector('.click');
-const body = document.querySelector('body');
-
-click.addEventListener('click', () => {
-  body.classList.toggle('dark');
+setTimeout(function () {
+  console.log(2);
 });
 
-// Language: javascript
+Promise.resolve().then(function () {
+  console.log(3);
+});
+console.log(4);
