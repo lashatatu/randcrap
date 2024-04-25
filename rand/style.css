@@ -1,0 +1,52 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	/*background-image: url('pheonix.jpg'); !* Add this line *!*/
+	/*background-size: cover; !* Add this line *!*/
+	/*background-position: center; !* Add this line *!*/
+}
+
+.bgimage{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: -1;
+}
+
+.pheonix{
+	font-size: 500px;
+	background-image: url('pheonix.jpg');
+	background-position: center;
+	background-size: 120%; /* Add this line */
+	-webkit-background-clip: text; /* Add this line */
+	background-clip: text; /* Add this line */
+	color: transparent; /* Add this line */
+}
+
+.watermark {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #000;
+	opacity: 0.3;
+	font-size: 10vw;
+	z-index: 9999;
+	pointer-events: none;
+	transform: rotate(45deg);
+}
+
+
