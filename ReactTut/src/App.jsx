@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Beers from "./Components/Beers";
 
-
 const App = () => {
   const [data, setData] = useState([]);
   const buttonRef = useRef(null);
