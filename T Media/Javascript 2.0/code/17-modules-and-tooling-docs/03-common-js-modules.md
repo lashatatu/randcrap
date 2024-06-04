@@ -2,7 +2,7 @@
 
 Let's look at the first type of module syntax called `CommonJS`. This is an older syntax that is used in Node.js. You won't use this much on the front-end, but if you plan on being a full-stack or back-end developer, you'll need to know it.
 
-Let's create an `app.js` file and a `utils.js` file. Let's say that the app file is the main entry point and utils is just some extra utility functions that we want to be able to use in multiple files.
+Let's create an `basics.js` file and a `utils.js` file. Let's say that the app file is the main entry point and utils is just some extra utility functions that we want to be able to use in multiple files.
 
 In `utils.js`, I am going to create a function that will capitalize the first letter of every word.
 
@@ -16,13 +16,13 @@ function capitalizeWords(str) {
 }
 ```
 
-I want to be able to import this into the `app.js` file and use it. In order to do that, we need to export it. We do that by using the `module.exports` object. We can then set it equal to the function that we want to export.
+I want to be able to import this into the `basics.js` file and use it. In order to do that, we need to export it. We do that by using the `module.exports` object. We can then set it equal to the function that we want to export.
 
 ```js
 module.exports = capitalizeWords;
 ```
 
-Now, I can import it into the `app.js` file. In order to do that, we use the `require()` function. We pass in the path to the file that we want to import. We can then store it in a variable and use it.
+Now, I can import it into the `basics.js` file. In order to do that, we use the `require()` function. We pass in the path to the file that we want to import. We can then store it in a variable and use it.
 
 ```js
 const capitalizeWords = require('./utils');
@@ -30,7 +30,7 @@ const capitalizeWords = require('./utils');
 console.log(capitalizeFirst('hello world')); // Hello World
 ```
 
-As you can see, we can import the function and use it in the `app.js` file.
+As you can see, we can import the function and use it in the `basics.js` file.
 
 ## Exporting Multiple functions
 
@@ -51,7 +51,7 @@ module.exports = {
 };
 ```
 
-Now when we import it in the `app.js` file, we can destructure it and get both functions.
+Now when we import it in the `basics.js` file, we can destructure it and get both functions.
 
 ```js
 const { capitalizeWords, makeMoney } = require('./utils');
@@ -83,7 +83,7 @@ Now, let's export it
 module.exports = Person;
 ```
 
-Now we can use it in the `app.js` file.
+Now we can use it in the `basics.js` file.
 
 ```js
 const Person = require('./Person');

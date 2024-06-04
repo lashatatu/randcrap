@@ -2,7 +2,7 @@
 
 `NPM` stands for `Node Package Manager`. It's a package manager for JavaScript. It's used to install 3rd-party packages and modules that we can use in our projects. There are over a million packages that you can install in a single command. Packages are hosted at `npmjs.com`.
 
-Let's create another `app.js` file. I'm going to install and use `Axios`, which is a 3rd-party HTTP client that is similar to the Fetch API, but even more powerful.
+Let's create another `basics.js` file. I'm going to install and use `Axios`, which is a 3rd-party HTTP client that is similar to the Fetch API, but even more powerful.
 
 When you create a Node.js app, the first thing that you usually do is run `npm init`. This will create a `package.json` file. This file is used to store information about your project. It's also used to store information about the packages that you install. It's kind of like a manifest file. It's also used to store scripts that you can run from the command line. We'll talk more about that later. For now, let's just run `npm init` and accept all of the defaults.
 
@@ -26,7 +26,7 @@ echo "node_modules" >> .gitignore
 
 Now, when we commit our code, the `node_modules` folder will not be included.
 
-Let's go to our `app.js` and import axios
+Let's go to our `basics.js` and import axios
 
 ```js
 import axios from 'axios';
@@ -71,16 +71,16 @@ Then, in your package.json file, it would be put in a `devDependencies` object.
 
 ## NPM Scripts
 
-Let's say that we want to run our `app.js` file. We could run `node app.js`, but that's kind of long. We can create a script in our `package.json` file to make this easier. Let's add a `start` script.
+Let's say that we want to run our `basics.js` file. We could run `node basics.js`, but that's kind of long. We can create a script in our `package.json` file to make this easier. Let's add a `start` script.
 
 ```json
 {
   "name": "npm-modules",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "basics.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node basics.js"
   },
   "keywords": [],
   "author": "",
@@ -93,7 +93,7 @@ Let's say that we want to run our `app.js` file. We could run `node app.js`, but
 }
 ```
 
-Now we can run `npm start` to run our `app.js` file.
+Now we can run `npm start` to run our `basics.js` file.
 
 Note that if you use something other than `start`, you will have to run `npm run <script name>`. Let's change start to `dev`. Let's ass a `dev` script that will run our app with Nodemon
 
@@ -102,10 +102,10 @@ Note that if you use something other than `start`, you will have to run `npm run
   "name": "npm-modules",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "basics.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node basics.js",
+    "dev": "nodemon basics.js"
   },
   "keywords": [],
   "author": "",

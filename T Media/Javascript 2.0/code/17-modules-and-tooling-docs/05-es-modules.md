@@ -10,7 +10,7 @@ In this lesson, we are not going to use any module bundlers. We're just going to
 
 ## The `type="module"` Module Attribute
 
-Create an `index.html` file and an `app.js` file to start with. Since we are going to be using modules in the browser, when you add the `<script>` tag to the HTML file, you need to add the `type="module"` attribute. This tells the browser that this is an ES Module. You can also add the `defer` attribute, which will make sure that the script is loaded after the HTML is loaded. This is just a good practice to get into.
+Create an `index.html` file and an `basics.js` file to start with. Since we are going to be using modules in the browser, when you add the `<script>` tag to the HTML file, you need to add the `type="module"` attribute. This tells the browser that this is an ES Module. You can also add the `defer` attribute, which will make sure that the script is loaded after the HTML is loaded. This is just a good practice to get into.
 
 ```html
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ Create an `index.html` file and an `app.js` file to start with. Since we are goi
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="app.js" type="module" defer></script>
+    <script src="basics.js" type="module" defer></script>
     <title>ES Modules</title>
   </head>
   <body>
@@ -50,7 +50,7 @@ export { capitalizeWords, makeMoney };
 
 As you can see, to export, we use the `export` keyword. We can export multiple things by separating them with a comma. So remember, with `CommonJS`, we use `module.exports = {}`, with ES Modules, we use `export {}`.
 
-Now, let's use it in the `app.js` file.
+Now, let's use it in the `basics.js` file.
 
 ```js
 import { capitalizeWords, makeMoney } from './modules/utils.js';

@@ -4,11 +4,11 @@ Now we are going to take the Tracalorie project, which is just a bunch of classe
 
 ## Set Up Files
 
-Copy the `webpack-starter` boilerplate and rename it to `tracalorie-webpack`. Open the `package.json` and change the name to `tracalorie-webpack`. You can also change the description and change `main` from `index.js` to `app.js`. This is optional, but it is a convention that I like. Especially, where this is where the `App` class is going to be.
+Copy the `webpack-starter` boilerplate and rename it to `tracalorie-webpack`. Open the `package.json` and change the name to `tracalorie-webpack`. You can also change the description and change `main` from `index.js` to `basics.js`. This is optional, but it is a convention that I like. Especially, where this is where the `App` class is going to be.
 
-Change the `entry` field in the `webpack.config.js` from `./src/index.js` to `./src/app.js`.
+Change the `entry` field in the `webpack.config.js` from `./src/index.js` to `./src/basics.js`.
 
-Delete the `message.js` file if it's there. That was just created to show you how modules work. You can remove everything in the `app.js` file as well.
+Delete the `message.js` file if it's there. That was just created to show you how modules work. You can remove everything in the `basics.js` file as well.
 
 ## Bring Over Assets & HTML
 
@@ -30,10 +30,10 @@ Delete all of these lines from the `<head>`:
 <link rel="stylesheet" href="css/bootstrap.css" />
 <link rel="stylesheet" href="css/style.css" />
 <script src="js/bootstrap.bundle.min.js" defer></script>
-<script src="js/app.js" defer></script>
+<script src="js/basics.js" defer></script>
 ```
 
-We don't need to include the app.js because now that we are using Webpack along with the HTMLWebpackPlugin, it will automatically include the `app.js` file for us. We don't need the stylesheet links because we will be importing our styles. Since we are going to install Bootstrap, we do not need the `bootstrap.bundle.min.js` file either.
+We don't need to include the basics.js because now that we are using Webpack along with the HTMLWebpackPlugin, it will automatically include the `basics.js` file for us. We don't need the stylesheet links because we will be importing our styles. Since we are going to install Bootstrap, we do not need the `bootstrap.bundle.min.js` file either.
 
 Paste the everything in from the `<body>`. Make sure there are no hardcoded dummy meals or workouts in the HTML.
 
@@ -45,7 +45,7 @@ Now we need to install Bootstrap and Fontawesome. We will be using the `bootstra
 npm install bootstrap @fortawesome/fontawesome-free
 ```
 
-Now open your `app.js` file and add the following imports:
+Now open your `basics.js` file and add the following imports:
 
 ```js
 import '@fortawesome/fontawesome-free/js/all.js';
@@ -92,7 +92,7 @@ import Storage from './Storage';
 
 ## Import CalorieTracker & Items Into App
 
-In the `src/app.js` folder, import the `CalorieTracker` and `Items` classes like this:
+In the `src/basics.js` folder, import the `CalorieTracker` and `Items` classes like this:
 
 ```js
 import CalorieTracker from './CalorieTracker';
@@ -101,7 +101,7 @@ import { Meal, Workout } from './Items';
 
 ## Create The App Class
 
-Now copy the entire App class to the `src/app.js` file. Also, instantiate the App class:
+Now copy the entire App class to the `src/basics.js` file. Also, instantiate the App class:
 
 ```js
 const app = new App();

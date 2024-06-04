@@ -1,17 +1,34 @@
-function add(n1: number, n2: number, showResult: boolean, phrase: string) {
+/*
+const person: {
+  name: string;
+  age: number;
+  hobbies: string[];
+  role: [number, string];
+} = {
+  name: "lasha",
+  age: 30,
+  hobbies: ["sports", "cooking"],
+  role: [2, "author"],
+};
 
-  const result=n1+n2;
-  if (showResult) {
-    console.log(phrase+result);
-  } else {
-    return result;
-  }
+person.role.push("admin");
+// person.role[1]=10;
+
+console.log(person.name);
+*/
+enum Role {
+  ADMIN,
+  READ_ONLY,
+  AUTHOR,
 }
 
-const number1 = 5;
-const number2 = 2.5;
+const person = {
+  name: "lasha",
+  age: 30,
+  hobbies: ["Sports", "Cooking"],
+  role: Role.ADMIN,
+};
 
-const printResult = true;
-const resultPhrase = "Result is: ";
-
-const result = add(number1, number2, printResult, resultPhrase);
+if(person.role===Role.AUTHOR){
+  console.log('is Author')
+}

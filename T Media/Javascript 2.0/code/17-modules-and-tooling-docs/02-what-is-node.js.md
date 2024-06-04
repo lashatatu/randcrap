@@ -10,22 +10,22 @@ Node is built on Chrome's V8 JavaScript engine. It uses an event-driven, non-blo
 
 Installing Node is extremely easy. Just go to the [Node.js website](https://nodejs.org/en/) and download the latest version. Once it's installed, you can check the version by opening up your terminal/command line and typing `node -v`. This should return the version number. You can also check the version of `npm` by typing `npm -v`. This should also return the version number.
 
-Let's create a folder to work in and an app.js file
+Let's create a folder to work in and an basics.js file
 
 ```js
 mkdir node-playground
 cd node-playground
-touch app.js
-code app.js
+touch basics.js
+code basics.js
 ```
 
 ## Running a .js file
 
-Add `console.log('Hello World');` to the app.js file.
+Add `console.log('Hello World');` to the basics.js file.
 
 There is no browser in this environment, so `console.log()` will output to the terminal.
 
-Now let's run this file in the terminal. We can do this by typing `node app.js`. We can also leave off the `.js` extension and just do `node app`. You should see `Hello World` logged to the terminal.
+Now let's run this file in the terminal. We can do this by typing `node basics.js`. We can also leave off the `.js` extension and just do `node app`. You should see `Hello World` logged to the terminal.
 
 Instead of just doing a hello world, let's fetch some data.
 
@@ -40,6 +40,6 @@ async function getUser() {
 getUser();
 ```
 
-Now let's run this file in the terminal with `node app.js`.
+Now let's run this file in the terminal with `node basics.js`.
 
 You should see the data logged to the console. Now let's run this file in the terminal.
