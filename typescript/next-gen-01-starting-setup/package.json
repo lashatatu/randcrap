@@ -5,14 +5,13 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lite-server",
-    "tsc-run": "tsc -w"
+    "start": "lite-server"
   },
   "keywords": [
     "typescript",
-    "tutorial"
+    "course"
   ],
-  "author": "Lasha Tatulashvili",
+  "author": "Lasha tatulashvili",
   "license": "ISC",
   "devDependencies": {
     "lite-server": "^2.5.4"
