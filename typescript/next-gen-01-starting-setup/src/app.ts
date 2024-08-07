@@ -14,3 +14,4 @@ const accounting = new Department("Accounting");
 console.log(accounting);
 
 accounting.describe()
+//
