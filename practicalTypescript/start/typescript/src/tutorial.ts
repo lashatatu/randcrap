@@ -1,1 +1,2 @@
-console.log("tutorial");
+let awesomeName: string = "shakeAndBrake";
+console.log(awesomeName);
