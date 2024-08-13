@@ -1,7 +1,12 @@
-let tax: number | string = 10;
-tax = 100;
+const books = ["1984", "Brave New World", "Fahrenheit 451"];
 
+let foundBook: string | undefined;
 
-let requestStatus: 'pending' | 'success' | 'error'= "pending"
+for (let book of books) {
+  if (book === "1984") {
+    foundBook = book;
+    break;
+  }
+}
 
-requestStatus="success"
+console.log(foundBook);
