@@ -1,12 +1,8 @@
-const books = ["1984", "Brave New World", "Fahrenheit 451"];
+let orderStatus: "processing" | "shipped" | "delivered" = "processing";
 
-let foundBook: string | undefined;
+orderStatus = "shipped";
+orderStatus = "delivered";
 
-for (let book of books) {
-  if (book === "1984") {
-    foundBook = book;
-    break;
-  }
-}
+let discount: number | string = 20;
 
-console.log(foundBook);
+discount = "20%";
