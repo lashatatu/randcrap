@@ -1,9 +1,7 @@
-let varString: string = "lasha";
-console.log(varString.toUpperCase());
-
-let varNum: number = 10;
+let tax: number | string = 10;
+tax = 100;
 
 
-let varBool: boolean = varNum >= 18;
+let requestStatus: 'pending' | 'success' | 'error'= "pending"
 
-varBool = !varBool;
+requestStatus="success"
