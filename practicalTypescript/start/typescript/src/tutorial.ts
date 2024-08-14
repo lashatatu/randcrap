@@ -1,10 +1,5 @@
-let car: { brand: string; year: number } = {
-  brand: "toyota",
-  year: 2020,
-};
+let bike: { brand: string; year: number } = { brand: "bmx", year: 1999 };
 
-let book = { title: "book", cost: 20 };
-let pen = { title: "pen", cost: 10 };
-let notebook = { title: "notebook" };
+let laptop: { brand: string; year: number } = { brand: "lenovo", year: 2000 };
 
-let items: { title: string; cost?: number }[] = [book, pen, notebook];
+let products: { title: string; price?: number }[] = [bike, laptop];
