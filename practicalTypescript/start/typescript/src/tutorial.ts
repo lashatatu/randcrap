@@ -1,12 +1,11 @@
-let names: string[] = ["lasha", "nana", "omari"];
-
-function checkNames(name: string): boolean {
-  return names.includes(name);
+function calculatePrice(price: number, discount: number) {
+  return price - discount;
 }
 
-let checkName = "giorgi";
-if (checkNames(checkName)) {
-  console.log(`name (${checkName}) is on the list`);
-} else {
-  console.log(`name (${checkName}) is not on the list`);
+let priceAfterDiscount = calculatePrice(100, 20);
+
+function calculateScore(initialScore:number,penaltyPoints:number):number{
+  return initialScore-penaltyPoints
 }
+
+
