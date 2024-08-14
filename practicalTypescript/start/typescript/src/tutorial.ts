@@ -1,5 +1,12 @@
-let bike: { brand: string; year: number } = { brand: "bmx", year: 1999 };
+let names: string[] = ["lasha", "nana", "omari"];
 
-let laptop: { brand: string; year: number } = { brand: "lenovo", year: 2000 };
+function checkNames(name: string): boolean {
+  return names.includes(name);
+}
 
-let products: { title: string; price?: number }[] = [bike, laptop];
+let checkName = "giorgi";
+if (checkNames(checkName)) {
+  console.log(`name (${checkName}) is on the list`);
+} else {
+  console.log(`name (${checkName}) is not on the list`);
+}
