@@ -1,11 +1,5 @@
-function calculatePrice(price: number, discount: number) {
-  return price - discount;
+function logMessage(message: string): void {
+  console.log(message);
 }
 
-let priceAfterDiscount = calculatePrice(100, 20);
-
-function calculateScore(initialScore:number,penaltyPoints:number):number{
-  return initialScore-penaltyPoints
-}
-
-
+logMessage("helllo, typescript");
