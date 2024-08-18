@@ -1,14 +1,17 @@
-function createEmployee({ id }: { id: number }): {
-  id: number;
-  isActive: boolean;
-} {
-  return { id, isActive: id % 2 === 0 };
+function processData(
+  input: string | number,
+  config: { reverse: boolean } = { reverse: false }
+): string | number {
+  if (typeof input === "number") {
+    return input * input;
+  } else {
+    return config.reverse
+      ? input.toUpperCase().split("").reverse().join("")
+      : input.toUpperCase();
+  }
 }
 
-const first = createEmployee({ id: 1 });
-const second = createEmployee({ id: 2 });
-console.log(first, second);
+console.log(processData(10));
+console.log(processData("hello"));
 
-function createStudent(student: { id: number; name: string }): void {
-  console.log(`welcome to course ${student.name.toUpperCase()}`)
-}
+console.log(processData("Hello", { reverse: true }));
