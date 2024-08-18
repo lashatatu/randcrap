@@ -1,17 +1,24 @@
-function processData(
-  input: string | number,
-  config: { reverse: boolean } = { reverse: false }
-): string | number {
-  if (typeof input === "number") {
-    return input * input;
+type Employee = { id: number; name: string; department: string };
+type Manager = { id: number; name: string; employees: Employee[] };
+
+type Staff = Employee | Manager;
+
+function printStaffDetails(staff: Staff): void {
+  if ("employees" in staff) {
+    console.log(
+      `${staff.name} is an manager in the ${staff.employees.length} employees`
+    );
   } else {
-    return config.reverse
-      ? input.toUpperCase().split("").reverse().join("")
-      : input.toUpperCase();
+    console.log(
+      `${staff.name} is an employee in the ${staff.department} department`
+    );
   }
 }
 
-console.log(processData(10));
-console.log(processData("hello"));
+const alice: Employee = { id: 1, name: "alice", department: "sales" };
+const steve: Employee = { id: 2, name: "steve", department: "HR" };
+const bob: Manager = { id: 3, name: "bob", employees: [alice, steve] };
 
-console.log(processData("Hello", { reverse: true }));
+
+printStaffDetails(steve)
+printStaffDetails(bob)
