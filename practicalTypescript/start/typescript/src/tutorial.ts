@@ -1,7 +1,6 @@
 
 
 
-/*
 
 //Interface - Fundamentals
 
@@ -25,7 +24,6 @@ deepWork.title = 'New Title'; // allowed
 // deepWork.isbn = 654321; // not allowed
 
 
-*/
 
 
 /*
