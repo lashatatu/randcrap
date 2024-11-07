@@ -26,7 +26,7 @@ const deepWork: Book = {
   }
 };
 
-// deepWork.title = 'New Title'; // allowed
+// deepWork.title = 'New Title'; // allowed.
 deepWork.printAuthor()
 const result=deepWork.printTitle('this is awesome book')
 console.log(result)
