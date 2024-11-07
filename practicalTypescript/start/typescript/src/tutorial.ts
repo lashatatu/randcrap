@@ -1,6 +1,27 @@
+interface Computer {
+  readonly id: number;
+  brand: string;
+  ram: number;
+  storage?: number;
+
+  upgradeRam(amount: number): number;
+}
+
+const myPC: Computer = {
+  id: 1,
+  brand: "lenovo",
+  ram: 32,
+  upgradeRam(amount):number {
+    this.ram+=amount
+    return this.ram
+  },
+};
+
+const upgradedPc=myPC.upgradeRam(10)
+console.log(upgradedPc)
 
 
-
+/*
 
 //Interface - Fundamentals
 
@@ -33,6 +54,7 @@ console.log(result)
 
 // deepWork.isbn = 654321; // not allowed
 
+*/
 
 
 /*
