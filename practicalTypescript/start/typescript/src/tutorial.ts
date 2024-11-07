@@ -9,17 +9,27 @@ interface Book {
   title: string;
   author: string;
   genre?: string;
+  printAuthor():void
+  printTitle(message:string):string
 }
 
 const deepWork: Book = {
   isbn: 9781455586691,
-  title: 'Deep Work',
-  author: 'Cal Newport',
-  genre: 'Self-help',
+  title: "Deep Work",
+  author: "Cal Newport",
+  genre: "Self-help",
+  printAuthor() {
+    console.log(this.author);
+  },
+  printTitle(message){
+    return `${this.title} ${message}`
+  }
 };
 
-deepWork.title = 'New Title'; // allowed
-
+// deepWork.title = 'New Title'; // allowed
+deepWork.printAuthor()
+const result=deepWork.printTitle('this is awesome book')
+console.log(result)
 
 // deepWork.isbn = 654321; // not allowed
 
