@@ -16,28 +16,27 @@ interface Manager extends Person {
 
 const employee: Person | DogOwner | Manager = getEmployee();
 
-
 function getEmployee(): Person | DogOwner | Manager {
-  const random: number = Math.random()
-  if(random<0.33){
+  const random: number = Math.random();
+  if (random < 0.33) {
     return {
-      name: 'john',
+      name: "john",
     };
   } else if (random < 0.66) {
     return {
-      name: 'sarah',
-      dogName: 'Rex',
+      name: "sarah",
+      dogName: "Rex lt",
     };
   } else {
     return {
-      name: 'bob',
-      managePeople: () => console.log('Managing people...'),
-      delegateTasks: () => console.log('Delegating tasks...'),
+      name: "bob",
+      managePeople: () => console.log("Managing people..."),
+      delegateTasks: () => console.log("Delegating tasks..."),
     };
   }
 }
 
-console.log(employee)
+console.log(employee);
 /*
 
 
@@ -63,7 +62,6 @@ const myPC: Computer = {
 const upgradedPc=myPC.upgradeRam(10)
 console.log(upgradedPc)
 */
-
 
 /*
 
@@ -99,7 +97,6 @@ console.log(result)
 // deepWork.isbn = 654321; // not allowed
 
 */
-
 
 /*
 
